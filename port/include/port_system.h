@@ -21,7 +21,10 @@ uint32_t port_system_init(void);
  *
  * @retval number of milliseconds since the system started.
  */
-uint32_t port_system_get_millis(void);
+uint32_t port_system_get_millis()
+{
+    return msTicks;
+};
 
 /**
  * @brief Sets the number of milliseconds since the system started.
