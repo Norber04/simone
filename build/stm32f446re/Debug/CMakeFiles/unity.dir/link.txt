@@ -1,0 +1,2 @@
+/usr/bin/ar qc libunity.a CMakeFiles/unity.dir/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.obj
+/usr/bin/ranlib libunity.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfsm.a CMakeFiles/fsm.dir/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.obj
+/usr/bin/ranlib libfsm.a
