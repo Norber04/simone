@@ -28,4 +28,7 @@
  */
 void SysTick_Handler(void)
 {
+    //Incremet the System ticks by one
+    uint32_t ticks = port_system_get_millis();
+    port_system_set_millis(ticks+1);
 }
