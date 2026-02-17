@@ -1,8 +1,8 @@
 /**
  * @file stm32f4_button.h
  * @brief Header for stm32f4_button.c file.
- * @author alumno1
- * @author alumno2
+ * @author Norberto de los Rios Gutierrez
+ * @author Alejandro Suarez Suarez
  * @date fecha
  */
 #ifndef STM32F4_BUTTON_H_
@@ -16,6 +16,8 @@
 
 /* Defines and enums ----------------------------------------------------------*/
 /* Defines */
+#define STM32F4_USER_BUTTON_GPIO GPIOC
+#define STM32F4_USER_BUTTON_PIN 13
 
 /* Typedefs --------------------------------------------------------------------*/
 /**

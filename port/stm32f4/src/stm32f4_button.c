@@ -8,10 +8,13 @@
 
 /* Includes ------------------------------------------------------------------*/
 /* Standard C includes */
-
+#include <stdio.h>
 /* HW dependent includes */
 #include "port_button.h" // Used to get general information about the buttons (ID, etc.)
 #include "port_system.h" // Used to get the system tick
+#include "stm32f4_button.h"
+#include "stm32f4_system.h"
+
 
 /* Microcontroller dependent includes */
 // TO-DO alumnos: include the necessary files to interact with the GPIOs
@@ -20,6 +23,9 @@
 /* Global variables ------------------------------------------------------------*/
 
 
+stm32f4_button_hw_t buttons_arr[] = {
+    [PORT_USER_BUTTON_ID] = {.p_port = STM32F4_USER_BUTTON_GPIO, .pin = STM32F4_USER_BUTTON_PIN, .pupd_mode = STM32F4_GPIO_PUPDR_NOPULL},
+};
 
 /* Private functions ----------------------------------------------------------*/
 /**

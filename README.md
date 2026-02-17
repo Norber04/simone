@@ -5,7 +5,7 @@ Acceso a la documentación y API del proyecto en [este enlace](https://sdg2dieup
 ## Authors
 
 * **Alumno 1** - email: [n.delosrios@alumnos.upm.es](mailto:n.delosrios@alumnos.upm.es)
-* **Alumno 2** - email: [alejandro.suarez@alumnos.upm.es](mailto:alumno@alumno.es)
+* **Alumno 2** - email: [alejandro.suarez@alumnos.upm.es](mailto:alejandro.suarez@alumnos.upm.es)
 
 Ponga una breve descripción del proyecto **aquí** en castellano e inglés.
 
