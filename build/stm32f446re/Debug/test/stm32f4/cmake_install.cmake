@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/test/stm32f4
+# Install script for directory: /home/norber04/MatrixMCU/projects/simone/test/stm32f4
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/opt/MatrixMCU/bin/arm-none-eabi-objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/arm-none-eabi-objdump")
 endif()
 

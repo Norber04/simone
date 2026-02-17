@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone
+CMAKE_SOURCE_DIR = /home/norber04/MatrixMCU/projects/simone
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug
+CMAKE_BINARY_DIR = /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug
 
 # Utility rule file for flash-main.
 
@@ -66,9 +66,9 @@ include CMakeFiles/flash-main.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/flash-main.dir/progress.make
 
-CMakeFiles/flash-main: /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Flashing main"
-	/usr/bin/openocd -f /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/../../openocd/stm32f4x.cfg -c program\ /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf\ verify\ reset\ exit
+CMakeFiles/flash-main: /home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Flashing main"
+	/usr/bin/openocd -f /home/norber04/MatrixMCU/projects/simone/../../openocd/stm32f4x.cfg -c program\ /home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf\ verify\ reset\ exit
 
 flash-main: CMakeFiles/flash-main
 flash-main: CMakeFiles/flash-main.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/flash-main.dir/clean:
 .PHONY : CMakeFiles/flash-main.dir/clean
 
 CMakeFiles/flash-main.dir/depend:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles/flash-main.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/norber04/MatrixMCU/projects/simone /home/norber04/MatrixMCU/projects/simone /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles/flash-main.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/flash-main.dir/depend
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone
+CMAKE_SOURCE_DIR = /home/norber04/MatrixMCU/projects/simone
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug
+CMAKE_BINARY_DIR = /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/main.dir/progress.make
 include CMakeFiles/main.dir/flags.make
 
 CMakeFiles/main.dir/main.c.obj: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/main.c.obj: /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/main.c
+CMakeFiles/main.dir/main.c.obj: /home/norber04/MatrixMCU/projects/simone/main.c
 CMakeFiles/main.dir/main.c.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/main.c.obj"
-	/opt/MatrixMCU/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/main.c.obj -MF CMakeFiles/main.dir/main.c.obj.d -o CMakeFiles/main.dir/main.c.obj -c /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/main.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/main.c.obj -MF CMakeFiles/main.dir/main.c.obj.d -o CMakeFiles/main.dir/main.c.obj -c /home/norber04/MatrixMCU/projects/simone/main.c
 
 CMakeFiles/main.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/main.c.i"
-	/opt/MatrixMCU/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/main.c > CMakeFiles/main.dir/main.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/norber04/MatrixMCU/projects/simone/main.c > CMakeFiles/main.dir/main.c.i
 
 CMakeFiles/main.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/main.c.s"
-	/opt/MatrixMCU/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/main.c -o CMakeFiles/main.dir/main.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/norber04/MatrixMCU/projects/simone/main.c -o CMakeFiles/main.dir/main.c.s
 
 CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj: /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/port/stm32f4/src/interr.c
+CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj: /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c
 CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj"
-	/opt/MatrixMCU/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj -MF CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj.d -o CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj -c /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/port/stm32f4/src/interr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj -MF CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj.d -o CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj -c /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c
 
 CMakeFiles/main.dir/port/stm32f4/src/interr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/port/stm32f4/src/interr.c.i"
-	/opt/MatrixMCU/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/port/stm32f4/src/interr.c > CMakeFiles/main.dir/port/stm32f4/src/interr.c.i
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c > CMakeFiles/main.dir/port/stm32f4/src/interr.c.i
 
 CMakeFiles/main.dir/port/stm32f4/src/interr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/port/stm32f4/src/interr.c.s"
-	/opt/MatrixMCU/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/port/stm32f4/src/interr.c -o CMakeFiles/main.dir/port/stm32f4/src/interr.c.s
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c -o CMakeFiles/main.dir/port/stm32f4/src/interr.c.s
 
 # Object files for target main
 main_OBJECTS = \
@@ -105,20 +105,20 @@ main_OBJECTS = \
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: CMakeFiles/main.dir/main.c.obj
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: CMakeFiles/main.dir/build.make
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: libproject-common.a
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: libproject-port.a
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: libfsm.a
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: libproject-common.a
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: libfsm.a
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf"
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: CMakeFiles/main.dir/main.c.obj
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: CMakeFiles/main.dir/build.make
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: libproject-common.a
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: libproject-port.a
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: libfsm.a
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: libproject-common.a
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: libfsm.a
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf: CMakeFiles/main.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable /home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/main.dir/build: /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf
+CMakeFiles/main.dir/build: /home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/main.elf
 .PHONY : CMakeFiles/main.dir/build
 
 CMakeFiles/main.dir/clean:
@@ -126,6 +126,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles/main.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/norber04/MatrixMCU/projects/simone /home/norber04/MatrixMCU/projects/simone /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles/main.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/main.dir/depend
 

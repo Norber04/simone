@@ -165,4 +165,27 @@ void stm32f4_system_gpio_exti_enable(uint8_t pin, uint8_t priority, uint8_t subp
  */
 void stm32f4_system_gpio_exti_disable(uint8_t pin);
 
+/**
+ * @brief Read the value of a GPIO line (pin)
+ * 
+ * @param pin  Pin/line of the GPIO (index from 0 to 15)
+ * 
+ * @return value of the pin
+ */
+bool stm32f4_system_gpio_read(uint8_t pin);
+
+/**
+ * @brief Write the value (value) on a GPIO line (pin)
+ * 
+ * @param pin in/line of the GPIO (index from 0 to 15)
+ * @param value digital value given to the line (true, false)
+ */
+void stm32f4_system_gpio_write(uint8_t pin , bool value);
+
+/**
+ * @brief Toggle the value of a GPIO line (pin)
+ * 
+ * @param pin in/line of the GPIO (index from 0 to 15)
+ */
+void stm32f4_system_gpio_toggle(uint8_t pin);
 #endif /* STM32F4_SYSTEM_H_ */

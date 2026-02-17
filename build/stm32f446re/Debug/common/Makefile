@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone
+CMAKE_SOURCE_DIR = /home/norber04/MatrixMCU/projects/simone
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug
+CMAKE_BINARY_DIR = /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/common//CMakeFiles/progress.marks
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/common//CMakeFiles/progress.marks
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/clean
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,17 +103,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/preinstall
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/preinstall
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -135,6 +135,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

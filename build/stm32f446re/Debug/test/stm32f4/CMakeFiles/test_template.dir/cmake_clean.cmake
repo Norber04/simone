@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf"
-  "/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.pdb"
+  "/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf"
+  "/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.pdb"
   "CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj"
   "CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj.d"
   "CMakeFiles/test_template.dir/test_template.c.obj"

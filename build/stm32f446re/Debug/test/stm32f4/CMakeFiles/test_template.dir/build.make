@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone
+CMAKE_SOURCE_DIR = /home/norber04/MatrixMCU/projects/simone
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug
+CMAKE_BINARY_DIR = /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug
 
 # Include any dependencies generated for this target.
 include test/stm32f4/CMakeFiles/test_template.dir/depend.make
@@ -70,32 +70,32 @@ include test/stm32f4/CMakeFiles/test_template.dir/progress.make
 include test/stm32f4/CMakeFiles/test_template.dir/flags.make
 
 test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj: test/stm32f4/CMakeFiles/test_template.dir/flags.make
-test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj: /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/test/stm32f4/test_template.c
+test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj: /home/norber04/MatrixMCU/projects/simone/test/stm32f4/test_template.c
 test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj: test/stm32f4/CMakeFiles/test_template.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj"
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /opt/MatrixMCU/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj -MF CMakeFiles/test_template.dir/test_template.c.obj.d -o CMakeFiles/test_template.dir/test_template.c.obj -c /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/test/stm32f4/test_template.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj"
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj -MF CMakeFiles/test_template.dir/test_template.c.obj.d -o CMakeFiles/test_template.dir/test_template.c.obj -c /home/norber04/MatrixMCU/projects/simone/test/stm32f4/test_template.c
 
 test/stm32f4/CMakeFiles/test_template.dir/test_template.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/test_template.dir/test_template.c.i"
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /opt/MatrixMCU/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/test/stm32f4/test_template.c > CMakeFiles/test_template.dir/test_template.c.i
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/norber04/MatrixMCU/projects/simone/test/stm32f4/test_template.c > CMakeFiles/test_template.dir/test_template.c.i
 
 test/stm32f4/CMakeFiles/test_template.dir/test_template.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/test_template.dir/test_template.c.s"
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /opt/MatrixMCU/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/test/stm32f4/test_template.c -o CMakeFiles/test_template.dir/test_template.c.s
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/norber04/MatrixMCU/projects/simone/test/stm32f4/test_template.c -o CMakeFiles/test_template.dir/test_template.c.s
 
 test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj: test/stm32f4/CMakeFiles/test_template.dir/flags.make
-test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj: /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/port/stm32f4/src/interr.c
+test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj: /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c
 test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj: test/stm32f4/CMakeFiles/test_template.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj"
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /opt/MatrixMCU/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj -MF CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj.d -o CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj -c /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/port/stm32f4/src/interr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj"
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj -MF CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj.d -o CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj -c /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c
 
 test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.i"
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /opt/MatrixMCU/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/port/stm32f4/src/interr.c > CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.i
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c > CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.i
 
 test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.s"
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /opt/MatrixMCU/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/port/stm32f4/src/interr.c -o CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.s
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c -o CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.s
 
 # Object files for target test_template
 test_template_OBJECTS = \
@@ -105,28 +105,28 @@ test_template_OBJECTS = \
 # External object files for target test_template
 test_template_EXTERNAL_OBJECTS =
 
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: test/stm32f4/CMakeFiles/test_template.dir/build.make
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: libunity.a
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: libproject-common.a
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: libproject-port.a
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: libfsm.a
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: libproject-common.a
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: libfsm.a
-/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: test/stm32f4/CMakeFiles/test_template.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf"
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_template.dir/link.txt --verbose=$(VERBOSE)
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: test/stm32f4/CMakeFiles/test_template.dir/build.make
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: libunity.a
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: libproject-common.a
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: libproject-port.a
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: libfsm.a
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: libproject-common.a
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: libfsm.a
+/home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf: test/stm32f4/CMakeFiles/test_template.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable /home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf"
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_template.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-test/stm32f4/CMakeFiles/test_template.dir/build: /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf
+test/stm32f4/CMakeFiles/test_template.dir/build: /home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf
 .PHONY : test/stm32f4/CMakeFiles/test_template.dir/build
 
 test/stm32f4/CMakeFiles/test_template.dir/clean:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && $(CMAKE_COMMAND) -P CMakeFiles/test_template.dir/cmake_clean.cmake
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && $(CMAKE_COMMAND) -P CMakeFiles/test_template.dir/cmake_clean.cmake
 .PHONY : test/stm32f4/CMakeFiles/test_template.dir/clean
 
 test/stm32f4/CMakeFiles/test_template.dir/depend:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/test/stm32f4 /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4/CMakeFiles/test_template.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/norber04/MatrixMCU/projects/simone /home/norber04/MatrixMCU/projects/simone/test/stm32f4 /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4/CMakeFiles/test_template.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : test/stm32f4/CMakeFiles/test_template.dir/depend
 

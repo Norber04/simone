@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone
+CMAKE_SOURCE_DIR = /home/norber04/MatrixMCU/projects/simone
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug
+CMAKE_BINARY_DIR = /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -195,6 +195,19 @@ flash-main/fast:
 .PHONY : flash-main/fast
 
 #=============================================================================
+# Target rules for targets named emulate-main
+
+# Build rule for target.
+emulate-main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 emulate-main
+.PHONY : emulate-main
+
+# fast build rule for target.
+emulate-main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/emulate-main.dir/build.make CMakeFiles/emulate-main.dir/build
+.PHONY : emulate-main/fast
+
+#=============================================================================
 # Target rules for targets named test_template
 
 # Build rule for target.
@@ -220,6 +233,19 @@ flash-test_template/fast:
 	$(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/flash-test_template.dir/build.make test/stm32f4/CMakeFiles/flash-test_template.dir/build
 .PHONY : flash-test_template/fast
 
+#=============================================================================
+# Target rules for targets named emulate-test_template
+
+# Build rule for target.
+emulate-test_template: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 emulate-test_template
+.PHONY : emulate-test_template
+
+# fast build rule for target.
+emulate-test_template/fast:
+	$(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/emulate-test_template.dir/build.make test/stm32f4/CMakeFiles/emulate-test_template.dir/build
+.PHONY : emulate-test_template/fast
+
 common/src/source.obj: common/src/source.c.obj
 .PHONY : common/src/source.obj
 
@@ -244,6 +270,62 @@ common/src/source.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project-common.dir/build.make CMakeFiles/project-common.dir/common/src/source.c.s
 .PHONY : common/src/source.c.s
 
+home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.obj: home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s.obj
+.PHONY : home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.obj
+
+# target to build an object file
+home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project-port.dir/build.make CMakeFiles/project-port.dir/home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s.obj
+.PHONY : home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s.obj
+
+home/norber04/MatrixMCU/lib/fsm/src/fsm.obj: home/norber04/MatrixMCU/lib/fsm/src/fsm.c.obj
+.PHONY : home/norber04/MatrixMCU/lib/fsm/src/fsm.obj
+
+# target to build an object file
+home/norber04/MatrixMCU/lib/fsm/src/fsm.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fsm.dir/build.make CMakeFiles/fsm.dir/home/norber04/MatrixMCU/lib/fsm/src/fsm.c.obj
+.PHONY : home/norber04/MatrixMCU/lib/fsm/src/fsm.c.obj
+
+home/norber04/MatrixMCU/lib/fsm/src/fsm.i: home/norber04/MatrixMCU/lib/fsm/src/fsm.c.i
+.PHONY : home/norber04/MatrixMCU/lib/fsm/src/fsm.i
+
+# target to preprocess a source file
+home/norber04/MatrixMCU/lib/fsm/src/fsm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fsm.dir/build.make CMakeFiles/fsm.dir/home/norber04/MatrixMCU/lib/fsm/src/fsm.c.i
+.PHONY : home/norber04/MatrixMCU/lib/fsm/src/fsm.c.i
+
+home/norber04/MatrixMCU/lib/fsm/src/fsm.s: home/norber04/MatrixMCU/lib/fsm/src/fsm.c.s
+.PHONY : home/norber04/MatrixMCU/lib/fsm/src/fsm.s
+
+# target to generate assembly for a file
+home/norber04/MatrixMCU/lib/fsm/src/fsm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fsm.dir/build.make CMakeFiles/fsm.dir/home/norber04/MatrixMCU/lib/fsm/src/fsm.c.s
+.PHONY : home/norber04/MatrixMCU/lib/fsm/src/fsm.c.s
+
+home/norber04/MatrixMCU/lib/unity/src/unity.obj: home/norber04/MatrixMCU/lib/unity/src/unity.c.obj
+.PHONY : home/norber04/MatrixMCU/lib/unity/src/unity.obj
+
+# target to build an object file
+home/norber04/MatrixMCU/lib/unity/src/unity.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/home/norber04/MatrixMCU/lib/unity/src/unity.c.obj
+.PHONY : home/norber04/MatrixMCU/lib/unity/src/unity.c.obj
+
+home/norber04/MatrixMCU/lib/unity/src/unity.i: home/norber04/MatrixMCU/lib/unity/src/unity.c.i
+.PHONY : home/norber04/MatrixMCU/lib/unity/src/unity.i
+
+# target to preprocess a source file
+home/norber04/MatrixMCU/lib/unity/src/unity.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/home/norber04/MatrixMCU/lib/unity/src/unity.c.i
+.PHONY : home/norber04/MatrixMCU/lib/unity/src/unity.c.i
+
+home/norber04/MatrixMCU/lib/unity/src/unity.s: home/norber04/MatrixMCU/lib/unity/src/unity.c.s
+.PHONY : home/norber04/MatrixMCU/lib/unity/src/unity.s
+
+# target to generate assembly for a file
+home/norber04/MatrixMCU/lib/unity/src/unity.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/home/norber04/MatrixMCU/lib/unity/src/unity.c.s
+.PHONY : home/norber04/MatrixMCU/lib/unity/src/unity.c.s
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -267,62 +349,6 @@ main.s: main.c.s
 main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.s
 .PHONY : main.c.s
-
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.obj: mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s.obj
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.obj
-
-# target to build an object file
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/project-port.dir/build.make CMakeFiles/project-port.dir/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s.obj
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s.obj
-
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.obj: mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.obj
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.obj
-
-# target to build an object file
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fsm.dir/build.make CMakeFiles/fsm.dir/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.obj
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.obj
-
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.i: mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.i
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.i
-
-# target to preprocess a source file
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fsm.dir/build.make CMakeFiles/fsm.dir/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.i
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.i
-
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.s: mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.s
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.s
-
-# target to generate assembly for a file
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fsm.dir/build.make CMakeFiles/fsm.dir/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.s
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.c.s
-
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.obj: mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.obj
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.obj
-
-# target to build an object file
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.obj
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.obj
-
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.i: mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.i
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.i
-
-# target to preprocess a source file
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.i
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.i
-
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.s: mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.s
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.s
-
-# target to generate assembly for a file
-mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.s
-.PHONY : mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.c.s
 
 port/stm32f4/src/interr.obj: port/stm32f4/src/interr.c.obj
 .PHONY : port/stm32f4/src/interr.obj
@@ -407,6 +433,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... emulate-main"
+	@echo "... emulate-test_template"
 	@echo "... flash-main"
 	@echo "... flash-test_template"
 	@echo "... fsm"
@@ -418,16 +446,16 @@ help:
 	@echo "... common/src/source.obj"
 	@echo "... common/src/source.i"
 	@echo "... common/src/source.s"
+	@echo "... home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.obj"
+	@echo "... home/norber04/MatrixMCU/lib/fsm/src/fsm.obj"
+	@echo "... home/norber04/MatrixMCU/lib/fsm/src/fsm.i"
+	@echo "... home/norber04/MatrixMCU/lib/fsm/src/fsm.s"
+	@echo "... home/norber04/MatrixMCU/lib/unity/src/unity.obj"
+	@echo "... home/norber04/MatrixMCU/lib/unity/src/unity.i"
+	@echo "... home/norber04/MatrixMCU/lib/unity/src/unity.s"
 	@echo "... main.obj"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.obj"
-	@echo "... mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.obj"
-	@echo "... mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.i"
-	@echo "... mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/fsm/src/fsm.s"
-	@echo "... mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.obj"
-	@echo "... mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.i"
-	@echo "... mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/lib/unity/src/unity.s"
 	@echo "... port/stm32f4/src/interr.obj"
 	@echo "... port/stm32f4/src/interr.i"
 	@echo "... port/stm32f4/src/interr.s"

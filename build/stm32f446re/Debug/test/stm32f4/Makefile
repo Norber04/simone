@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone
+CMAKE_SOURCE_DIR = /home/norber04/MatrixMCU/projects/simone
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug
+CMAKE_BINARY_DIR = /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4//CMakeFiles/progress.marks
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4//CMakeFiles/progress.marks
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/clean
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/preinstall
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/preinstall
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/stm32f4/CMakeFiles/test_template.dir/rule:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/CMakeFiles/test_template.dir/rule
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/CMakeFiles/test_template.dir/rule
 .PHONY : test/stm32f4/CMakeFiles/test_template.dir/rule
 
 # Convenience name for target.
@@ -127,12 +127,12 @@ test_template: test/stm32f4/CMakeFiles/test_template.dir/rule
 
 # fast build rule for target.
 test_template/fast:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/build
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/build
 .PHONY : test_template/fast
 
 # Convenience name for target.
 test/stm32f4/CMakeFiles/flash-test_template.dir/rule:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/CMakeFiles/flash-test_template.dir/rule
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/CMakeFiles/flash-test_template.dir/rule
 .PHONY : test/stm32f4/CMakeFiles/flash-test_template.dir/rule
 
 # Convenience name for target.
@@ -141,15 +141,29 @@ flash-test_template: test/stm32f4/CMakeFiles/flash-test_template.dir/rule
 
 # fast build rule for target.
 flash-test_template/fast:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/flash-test_template.dir/build.make test/stm32f4/CMakeFiles/flash-test_template.dir/build
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/flash-test_template.dir/build.make test/stm32f4/CMakeFiles/flash-test_template.dir/build
 .PHONY : flash-test_template/fast
+
+# Convenience name for target.
+test/stm32f4/CMakeFiles/emulate-test_template.dir/rule:
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/CMakeFiles/emulate-test_template.dir/rule
+.PHONY : test/stm32f4/CMakeFiles/emulate-test_template.dir/rule
+
+# Convenience name for target.
+emulate-test_template: test/stm32f4/CMakeFiles/emulate-test_template.dir/rule
+.PHONY : emulate-test_template
+
+# fast build rule for target.
+emulate-test_template/fast:
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/emulate-test_template.dir/build.make test/stm32f4/CMakeFiles/emulate-test_template.dir/build
+.PHONY : emulate-test_template/fast
 
 __/__/port/stm32f4/src/interr.obj: __/__/port/stm32f4/src/interr.c.obj
 .PHONY : __/__/port/stm32f4/src/interr.obj
 
 # target to build an object file
 __/__/port/stm32f4/src/interr.c.obj:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj
 .PHONY : __/__/port/stm32f4/src/interr.c.obj
 
 __/__/port/stm32f4/src/interr.i: __/__/port/stm32f4/src/interr.c.i
@@ -157,7 +171,7 @@ __/__/port/stm32f4/src/interr.i: __/__/port/stm32f4/src/interr.c.i
 
 # target to preprocess a source file
 __/__/port/stm32f4/src/interr.c.i:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.i
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.i
 .PHONY : __/__/port/stm32f4/src/interr.c.i
 
 __/__/port/stm32f4/src/interr.s: __/__/port/stm32f4/src/interr.c.s
@@ -165,7 +179,7 @@ __/__/port/stm32f4/src/interr.s: __/__/port/stm32f4/src/interr.c.s
 
 # target to generate assembly for a file
 __/__/port/stm32f4/src/interr.c.s:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.s
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.s
 .PHONY : __/__/port/stm32f4/src/interr.c.s
 
 test_template.obj: test_template.c.obj
@@ -173,7 +187,7 @@ test_template.obj: test_template.c.obj
 
 # target to build an object file
 test_template.c.obj:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj
 .PHONY : test_template.c.obj
 
 test_template.i: test_template.c.i
@@ -181,7 +195,7 @@ test_template.i: test_template.c.i
 
 # target to preprocess a source file
 test_template.c.i:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/test_template.c.i
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/test_template.c.i
 .PHONY : test_template.c.i
 
 test_template.s: test_template.c.s
@@ -189,7 +203,7 @@ test_template.s: test_template.c.s
 
 # target to generate assembly for a file
 test_template.c.s:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/test_template.c.s
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/test_template.c.s
 .PHONY : test_template.c.s
 
 # Help Target
@@ -200,6 +214,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... emulate-test_template"
 	@echo "... flash-test_template"
 	@echo "... test_template"
 	@echo "... __/__/port/stm32f4/src/interr.obj"
@@ -219,6 +234,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

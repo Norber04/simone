@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone
+CMAKE_SOURCE_DIR = /home/norber04/MatrixMCU/projects/simone
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug
+CMAKE_BINARY_DIR = /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug
 
 # Utility rule file for flash-test_template.
 
@@ -66,9 +66,9 @@ include test/stm32f4/CMakeFiles/flash-test_template.dir/compiler_depend.make
 # Include the progress variables for this target.
 include test/stm32f4/CMakeFiles/flash-test_template.dir/progress.make
 
-test/stm32f4/CMakeFiles/flash-test_template: /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Flashing test_template to target"
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /usr/bin/openocd -f /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/../../openocd/stm32f4x.cfg -c program\ /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf\ verify\ reset\ exit
+test/stm32f4/CMakeFiles/flash-test_template: /home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Flashing test_template to target"
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && /usr/bin/openocd -f /home/norber04/MatrixMCU/projects/simone/../../openocd/stm32f4x.cfg -c program\ /home/norber04/MatrixMCU/projects/simone/bin/stm32f446re/Debug/test_template.elf\ verify\ reset\ exit
 
 flash-test_template: test/stm32f4/CMakeFiles/flash-test_template
 flash-test_template: test/stm32f4/CMakeFiles/flash-test_template.dir/build.make
@@ -79,10 +79,10 @@ test/stm32f4/CMakeFiles/flash-test_template.dir/build: flash-test_template
 .PHONY : test/stm32f4/CMakeFiles/flash-test_template.dir/build
 
 test/stm32f4/CMakeFiles/flash-test_template.dir/clean:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && $(CMAKE_COMMAND) -P CMakeFiles/flash-test_template.dir/cmake_clean.cmake
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 && $(CMAKE_COMMAND) -P CMakeFiles/flash-test_template.dir/cmake_clean.cmake
 .PHONY : test/stm32f4/CMakeFiles/flash-test_template.dir/clean
 
 test/stm32f4/CMakeFiles/flash-test_template.dir/depend:
-	cd /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/test/stm32f4 /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 /mnt/c/ASUAREZ/Programacion/SDG/SDG2/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4/CMakeFiles/flash-test_template.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/norber04/MatrixMCU/projects/simone /home/norber04/MatrixMCU/projects/simone/test/stm32f4 /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4 /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/test/stm32f4/CMakeFiles/flash-test_template.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : test/stm32f4/CMakeFiles/flash-test_template.dir/depend
 
