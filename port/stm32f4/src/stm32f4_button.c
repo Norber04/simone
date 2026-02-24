@@ -1,8 +1,8 @@
 /**
  * @file stm32f4_button.c
  * @brief Portable functions to interact with the button FSM library. All portable functions must be implemented in this file.
- * @author alumno1
- * @author alumno2
+ * @author n.delosrios@alumnos.upm.es   
+ * @author alejandro.suarez@alumnos.upm.es
  * @date fecha
  */
 
@@ -57,5 +57,18 @@ void port_button_init(uint8_t button_id)
 
 
     /* TO-DO alumnos */
+    // configures the button as input with no pullup neither pulldown
+    stm32f4_system_gpio_config(p_button->p_port, p_button->pin, 0x00U, 0x00U);
+    // allowis the interruption mode in both rising and falling edges, enables the interruption request
+    stm32f4_system_gpio_config_exti(p_button->p_port, p_button->pin, 0x01 || 0x02 || 0x08);
+    //set the priority to 1 and subpriority to 0
+    stm32f4_system_gpio_exti_enable(p_button->pin,1,0);
 }
 
+bool port_button_get_pressed(uint8_t button_id)
+{
+    // Retrieve the button struct using the private function and the button ID
+    stm32f4_button_hw_t *p_button = _stm32f4_button_get(button_id);
+
+    return p_button->flag_pressed;
+}

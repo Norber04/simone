@@ -11,4 +11,6 @@ CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj: \
  /home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Include/cmsis_compiler.h \
  /home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Include/cmsis_gcc.h \
  /home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Include/mpu_armv7.h \
- /home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
+ /home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+ /home/norber04/MatrixMCU/projects/simone/port/include/port_button.h \
+ /home/norber04/MatrixMCU/projects/simone/port/stm32f4/include/stm32f4_button.h

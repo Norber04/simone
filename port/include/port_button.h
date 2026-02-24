@@ -38,4 +38,20 @@ void check_timeout();
 
 void check_button_released();
 void do_set_duration();
+
+/**
+ * @brief Return the status of the button
+ * 
+ * @param button_id button to read the status
+ * @return true if the button has been pressed
+ * @return false if the button has not been pressed
+ */
+bool port_button_get_pressed(uint8_t button_id);
+
+/**
+ * @brief Configures the button given as input, interruprions in rysing and falling edges.
+ * 
+ * @param button_id button given to configure
+ */
+void port_button_init(uint8_t button_id);
 #endif

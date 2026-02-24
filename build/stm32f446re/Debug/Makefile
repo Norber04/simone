@@ -377,6 +377,30 @@ port/stm32f4/src/interr.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/port/stm32f4/src/interr.c.s
 .PHONY : port/stm32f4/src/interr.c.s
 
+port/stm32f4/src/stm32f4_button.obj: port/stm32f4/src/stm32f4_button.c.obj
+.PHONY : port/stm32f4/src/stm32f4_button.obj
+
+# target to build an object file
+port/stm32f4/src/stm32f4_button.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project-port.dir/build.make CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.obj
+.PHONY : port/stm32f4/src/stm32f4_button.c.obj
+
+port/stm32f4/src/stm32f4_button.i: port/stm32f4/src/stm32f4_button.c.i
+.PHONY : port/stm32f4/src/stm32f4_button.i
+
+# target to preprocess a source file
+port/stm32f4/src/stm32f4_button.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project-port.dir/build.make CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.i
+.PHONY : port/stm32f4/src/stm32f4_button.c.i
+
+port/stm32f4/src/stm32f4_button.s: port/stm32f4/src/stm32f4_button.c.s
+.PHONY : port/stm32f4/src/stm32f4_button.s
+
+# target to generate assembly for a file
+port/stm32f4/src/stm32f4_button.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/project-port.dir/build.make CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.s
+.PHONY : port/stm32f4/src/stm32f4_button.c.s
+
 port/stm32f4/src/stm32f4_system.obj: port/stm32f4/src/stm32f4_system.c.obj
 .PHONY : port/stm32f4/src/stm32f4_system.obj
 
@@ -459,6 +483,9 @@ help:
 	@echo "... port/stm32f4/src/interr.obj"
 	@echo "... port/stm32f4/src/interr.i"
 	@echo "... port/stm32f4/src/interr.s"
+	@echo "... port/stm32f4/src/stm32f4_button.obj"
+	@echo "... port/stm32f4/src/stm32f4_button.i"
+	@echo "... port/stm32f4/src/stm32f4_button.s"
 	@echo "... port/stm32f4/src/stm32f4_system.obj"
 	@echo "... port/stm32f4/src/stm32f4_system.i"
 	@echo "... port/stm32f4/src/stm32f4_system.s"

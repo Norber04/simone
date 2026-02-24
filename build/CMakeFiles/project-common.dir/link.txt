@@ -1,0 +1,2 @@
+/usr/bin/arm-none-eabi-ar qc libproject-common.a "CMakeFiles/project-common.dir/common/src/source.c.obj"
+/usr/bin/arm-none-eabi-ranlib libproject-common.a

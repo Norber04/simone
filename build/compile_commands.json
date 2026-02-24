@@ -1,0 +1,74 @@
+[
+{
+  "directory": "/home/norber04/MatrixMCU/projects/simone/build",
+  "command": "/usr/bin/arm-none-eabi-gcc -DUSE_SEMIHOSTING -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/src  -DSTM32F446xx -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Werror -Wno-unused-parameter -g -O0 -o CMakeFiles/fsm.dir/home/norber04/MatrixMCU/lib/fsm/src/fsm.c.obj -c /home/norber04/MatrixMCU/lib/fsm/src/fsm.c",
+  "file": "/home/norber04/MatrixMCU/lib/fsm/src/fsm.c",
+  "output": "CMakeFiles/fsm.dir/home/norber04/MatrixMCU/lib/fsm/src/fsm.c.obj"
+},
+{
+  "directory": "/home/norber04/MatrixMCU/projects/simone/build",
+  "command": "/usr/bin/arm-none-eabi-gcc -DUSE_SEMIHOSTING -I/home/norber04/MatrixMCU/projects/simone/../../lib/unity/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/unity/src  -DSTM32F446xx -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Werror -Wno-unused-parameter -g -O0 -o CMakeFiles/unity.dir/home/norber04/MatrixMCU/lib/unity/src/unity.c.obj -c /home/norber04/MatrixMCU/lib/unity/src/unity.c",
+  "file": "/home/norber04/MatrixMCU/lib/unity/src/unity.c",
+  "output": "CMakeFiles/unity.dir/home/norber04/MatrixMCU/lib/unity/src/unity.c.obj"
+},
+{
+  "directory": "/home/norber04/MatrixMCU/projects/simone/build",
+  "command": "/usr/bin/arm-none-eabi-gcc -DUSE_SEMIHOSTING -I/home/norber04/MatrixMCU/projects/simone/common/include -I/home/norber04/MatrixMCU/projects/simone/port/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/src  -DSTM32F446xx -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Werror -Wno-unused-parameter -g -O0 -std=gnu11 -o CMakeFiles/project-common.dir/common/src/source.c.obj -c /home/norber04/MatrixMCU/projects/simone/common/src/source.c",
+  "file": "/home/norber04/MatrixMCU/projects/simone/common/src/source.c",
+  "output": "CMakeFiles/project-common.dir/common/src/source.c.obj"
+},
+{
+  "directory": "/home/norber04/MatrixMCU/projects/simone/build",
+  "command": "/usr/bin/arm-none-eabi-gcc -DUSE_SEMIHOSTING -I/home/norber04/MatrixMCU/projects/simone/port/stm32f4/include -I/home/norber04/MatrixMCU/projects/simone/port/include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Include -I/home/norber04/MatrixMCU/projects/simone/common/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/src  -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -g -o CMakeFiles/project-port.dir/home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s.obj -c /home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s",
+  "file": "/home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s",
+  "output": "CMakeFiles/project-port.dir/home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s.obj"
+},
+{
+  "directory": "/home/norber04/MatrixMCU/projects/simone/build",
+  "command": "/usr/bin/arm-none-eabi-gcc -DUSE_SEMIHOSTING -I/home/norber04/MatrixMCU/projects/simone/port/stm32f4/include -I/home/norber04/MatrixMCU/projects/simone/port/include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Include -I/home/norber04/MatrixMCU/projects/simone/common/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/src  -DSTM32F446xx -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Werror -Wno-unused-parameter -g -O0 -std=gnu11 -o CMakeFiles/project-port.dir/port/stm32f4/src/interr.c.obj -c /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c",
+  "file": "/home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c",
+  "output": "CMakeFiles/project-port.dir/port/stm32f4/src/interr.c.obj"
+},
+{
+  "directory": "/home/norber04/MatrixMCU/projects/simone/build",
+  "command": "/usr/bin/arm-none-eabi-gcc -DUSE_SEMIHOSTING -I/home/norber04/MatrixMCU/projects/simone/port/stm32f4/include -I/home/norber04/MatrixMCU/projects/simone/port/include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Include -I/home/norber04/MatrixMCU/projects/simone/common/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/src  -DSTM32F446xx -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Werror -Wno-unused-parameter -g -O0 -std=gnu11 -o CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.obj -c /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/stm32f4_button.c",
+  "file": "/home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/stm32f4_button.c",
+  "output": "CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.obj"
+},
+{
+  "directory": "/home/norber04/MatrixMCU/projects/simone/build",
+  "command": "/usr/bin/arm-none-eabi-gcc -DUSE_SEMIHOSTING -I/home/norber04/MatrixMCU/projects/simone/port/stm32f4/include -I/home/norber04/MatrixMCU/projects/simone/port/include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Include -I/home/norber04/MatrixMCU/projects/simone/common/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/src  -DSTM32F446xx -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Werror -Wno-unused-parameter -g -O0 -std=gnu11 -o CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.obj -c /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/stm32f4_system.c",
+  "file": "/home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/stm32f4_system.c",
+  "output": "CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.obj"
+},
+{
+  "directory": "/home/norber04/MatrixMCU/projects/simone/build",
+  "command": "/usr/bin/arm-none-eabi-gcc -DUSE_SEMIHOSTING -I/home/norber04/MatrixMCU/projects/simone/port/stm32f4/include -I/home/norber04/MatrixMCU/projects/simone/port/include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Include -I/home/norber04/MatrixMCU/projects/simone/common/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/src  -DSTM32F446xx -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Werror -Wno-unused-parameter -g -O0 -std=gnu11 -o CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.obj -c /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/syscalls.c",
+  "file": "/home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/syscalls.c",
+  "output": "CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.obj"
+},
+{
+  "directory": "/home/norber04/MatrixMCU/projects/simone/build",
+  "command": "/usr/bin/arm-none-eabi-gcc -DUSE_SEMIHOSTING -I/home/norber04/MatrixMCU/projects/simone/common/include -I/home/norber04/MatrixMCU/projects/simone/port/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/src -I/home/norber04/MatrixMCU/projects/simone/port/stm32f4/include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Include  -DSTM32F446xx -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Werror -Wno-unused-parameter -g -O0 -std=gnu11 -o CMakeFiles/main.dir/main.c.obj -c /home/norber04/MatrixMCU/projects/simone/main.c",
+  "file": "/home/norber04/MatrixMCU/projects/simone/main.c",
+  "output": "CMakeFiles/main.dir/main.c.obj"
+},
+{
+  "directory": "/home/norber04/MatrixMCU/projects/simone/build",
+  "command": "/usr/bin/arm-none-eabi-gcc -DUSE_SEMIHOSTING -I/home/norber04/MatrixMCU/projects/simone/common/include -I/home/norber04/MatrixMCU/projects/simone/port/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/src -I/home/norber04/MatrixMCU/projects/simone/port/stm32f4/include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Include  -DSTM32F446xx -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Werror -Wno-unused-parameter -g -O0 -std=gnu11 -o CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj -c /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c",
+  "file": "/home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c",
+  "output": "CMakeFiles/main.dir/port/stm32f4/src/interr.c.obj"
+},
+{
+  "directory": "/home/norber04/MatrixMCU/projects/simone/build/test/stm32f4",
+  "command": "/usr/bin/arm-none-eabi-gcc -DUSE_SEMIHOSTING -I/home/norber04/MatrixMCU/projects/simone/../../lib/unity/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/unity/src -I/home/norber04/MatrixMCU/projects/simone/common/include -I/home/norber04/MatrixMCU/projects/simone/port/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/src -I/home/norber04/MatrixMCU/projects/simone/port/stm32f4/include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Include  -DSTM32F446xx -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Werror -Wno-unused-parameter -g -O0 -std=gnu11 -o CMakeFiles/test_template.dir/test_template.c.obj -c /home/norber04/MatrixMCU/projects/simone/test/stm32f4/test_template.c",
+  "file": "/home/norber04/MatrixMCU/projects/simone/test/stm32f4/test_template.c",
+  "output": "test/stm32f4/CMakeFiles/test_template.dir/test_template.c.obj"
+},
+{
+  "directory": "/home/norber04/MatrixMCU/projects/simone/build/test/stm32f4",
+  "command": "/usr/bin/arm-none-eabi-gcc -DUSE_SEMIHOSTING -I/home/norber04/MatrixMCU/projects/simone/../../lib/unity/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/unity/src -I/home/norber04/MatrixMCU/projects/simone/common/include -I/home/norber04/MatrixMCU/projects/simone/port/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/include -I/home/norber04/MatrixMCU/projects/simone/../../lib/fsm/src -I/home/norber04/MatrixMCU/projects/simone/port/stm32f4/include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Include -I/home/norber04/MatrixMCU/projects/simone/../../drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Include  -DSTM32F446xx -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Wall -Wextra -Werror -Wno-unused-parameter -g -O0 -std=gnu11 -o CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj -c /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c",
+  "file": "/home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c",
+  "output": "test/stm32f4/CMakeFiles/test_template.dir/__/__/port/stm32f4/src/interr.c.obj"
+}
+]

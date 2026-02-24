@@ -220,7 +220,7 @@ CMakeFiles/fsm.dir/clean:
 CMakeFiles/unity.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/unity.dir/build.make CMakeFiles/unity.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=20,21 "Built target unity"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=21,22 "Built target unity"
 .PHONY : CMakeFiles/unity.dir/all
 
 # Build rule for subdir invocation for target.
@@ -273,12 +273,12 @@ CMakeFiles/project-port.dir/all: CMakeFiles/fsm.dir/all
 CMakeFiles/project-port.dir/all: CMakeFiles/project-common.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project-port.dir/build.make CMakeFiles/project-port.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/project-port.dir/build.make CMakeFiles/project-port.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=12,13,14,15,16 "Built target project-port"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=12,13,14,15,16,17 "Built target project-port"
 .PHONY : CMakeFiles/project-port.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/project-port.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/project-port.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
 .PHONY : CMakeFiles/project-port.dir/rule
@@ -306,7 +306,7 @@ CMakeFiles/main.dir/all: CMakeFiles/project-port.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
 .PHONY : CMakeFiles/main.dir/rule
@@ -332,7 +332,7 @@ CMakeFiles/flash-main.dir/all: CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/flash-main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/flash-main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
 .PHONY : CMakeFiles/flash-main.dir/rule
@@ -358,7 +358,7 @@ CMakeFiles/emulate-main.dir/all: CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/emulate-main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/emulate-main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
 .PHONY : CMakeFiles/emulate-main.dir/rule
@@ -382,12 +382,12 @@ test/stm32f4/CMakeFiles/test_template.dir/all: CMakeFiles/project-common.dir/all
 test/stm32f4/CMakeFiles/test_template.dir/all: CMakeFiles/project-port.dir/all
 	$(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/stm32f4/CMakeFiles/test_template.dir/build.make test/stm32f4/CMakeFiles/test_template.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=17,18,19 "Built target test_template"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=18,19,20 "Built target test_template"
 .PHONY : test/stm32f4/CMakeFiles/test_template.dir/all
 
 # Build rule for subdir invocation for target.
 test/stm32f4/CMakeFiles/test_template.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/CMakeFiles/test_template.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
 .PHONY : test/stm32f4/CMakeFiles/test_template.dir/rule
@@ -413,7 +413,7 @@ test/stm32f4/CMakeFiles/flash-test_template.dir/all: test/stm32f4/CMakeFiles/tes
 
 # Build rule for subdir invocation for target.
 test/stm32f4/CMakeFiles/flash-test_template.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/CMakeFiles/flash-test_template.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
 .PHONY : test/stm32f4/CMakeFiles/flash-test_template.dir/rule
@@ -439,7 +439,7 @@ test/stm32f4/CMakeFiles/emulate-test_template.dir/all: test/stm32f4/CMakeFiles/t
 
 # Build rule for subdir invocation for target.
 test/stm32f4/CMakeFiles/emulate-test_template.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/stm32f4/CMakeFiles/emulate-test_template.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles 0
 .PHONY : test/stm32f4/CMakeFiles/emulate-test_template.dir/rule

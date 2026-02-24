@@ -96,10 +96,24 @@ CMakeFiles/project-port.dir/port/stm32f4/src/interr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/project-port.dir/port/stm32f4/src/interr.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/interr.c -o CMakeFiles/project-port.dir/port/stm32f4/src/interr.c.s
 
+CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.obj: CMakeFiles/project-port.dir/flags.make
+CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.obj: /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/stm32f4_button.c
+CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.obj: CMakeFiles/project-port.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.obj -MF CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.obj.d -o CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.obj -c /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/stm32f4_button.c
+
+CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/stm32f4_button.c > CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.i
+
+CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/stm32f4_button.c -o CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.s
+
 CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.obj: CMakeFiles/project-port.dir/flags.make
 CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.obj: /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/stm32f4_system.c
 CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.obj: CMakeFiles/project-port.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.obj -MF CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.obj.d -o CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.obj -c /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/stm32f4_system.c
 
 CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.i: cmake_force
@@ -113,7 +127,7 @@ CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.s: cmake_force
 CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.obj: CMakeFiles/project-port.dir/flags.make
 CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.obj: /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/syscalls.c
 CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.obj: CMakeFiles/project-port.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.obj"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.obj -MF CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.obj.d -o CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.obj -c /home/norber04/MatrixMCU/projects/simone/port/stm32f4/src/syscalls.c
 
 CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.i: cmake_force
@@ -128,6 +142,7 @@ CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.s: cmake_force
 project__port_OBJECTS = \
 "CMakeFiles/project-port.dir/home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s.obj" \
 "CMakeFiles/project-port.dir/port/stm32f4/src/interr.c.obj" \
+"CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.obj" \
 "CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.obj" \
 "CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.obj"
 
@@ -136,11 +151,12 @@ project__port_EXTERNAL_OBJECTS =
 
 libproject-port.a: CMakeFiles/project-port.dir/home/norber04/MatrixMCU/drivers/stm32f4xx/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f446xx.s.obj
 libproject-port.a: CMakeFiles/project-port.dir/port/stm32f4/src/interr.c.obj
+libproject-port.a: CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_button.c.obj
 libproject-port.a: CMakeFiles/project-port.dir/port/stm32f4/src/stm32f4_system.c.obj
 libproject-port.a: CMakeFiles/project-port.dir/port/stm32f4/src/syscalls.c.obj
 libproject-port.a: CMakeFiles/project-port.dir/build.make
 libproject-port.a: CMakeFiles/project-port.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libproject-port.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/norber04/MatrixMCU/projects/simone/build/stm32f446re/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library libproject-port.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/project-port.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/project-port.dir/link.txt --verbose=$(VERBOSE)
 

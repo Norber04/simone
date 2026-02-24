@@ -9,6 +9,11 @@
 #include "stm32f4_system.h"
 
 // Include headers of different port elements:
+#include "port_button.h"
+#include "stm32f4_button.h"
+//#include "port_keyboard.h"
+//#include "stm32f4_keyboard.h"
+//#include "port_simone.h"
 
 //------------------------------------------------------
 // INTERRUPT SERVICE ROUTINES
@@ -31,4 +36,28 @@ void SysTick_Handler(void)
     //Incremet the System ticks by one
     uint32_t ticks = port_system_get_millis();
     port_system_set_millis(ticks+1);
+}
+
+/**
+ * @brief This function handles the interruption from the user button 
+ * 
+ */
+void EXTI15_10_IRQHandler(void)
+{
+    /*ISR user button*/
+    if (EXTI->PR & BIT_POS_TO_MASK(buttons_arr[PORT_USER_BUTTON_ID].pin))
+    {
+        if (stm32f4_system_gpio_read(buttons_arr[PORT_USER_BUTTON_ID].pin))
+        {
+            //if the is released changes the flag
+            buttons_arr[PORT_USER_BUTTON_ID].flag_pressed = false;
+        }
+        else
+        {
+            buttons_arr[PORT_USER_BUTTON_ID].flag_pressed = true;
+        }
+        // cleans the pendig register
+        EXTI->PR = BIT_POS_TO_MASK(buttons_arr[PORT_USER_BUTTON_ID].pin);
+
+    }
 }
