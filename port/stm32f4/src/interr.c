@@ -47,7 +47,7 @@ void EXTI15_10_IRQHandler(void)
     /*ISR user button*/
     if (EXTI->PR & BIT_POS_TO_MASK(buttons_arr[PORT_USER_BUTTON_ID].pin))
     {
-        if (stm32f4_system_gpio_read(buttons_arr[PORT_USER_BUTTON_ID].pin))
+        if (stm32f4_system_gpio_read(buttons_arr[PORT_USER_BUTTON_ID].p_port,buttons_arr[PORT_USER_BUTTON_ID].pin))
         {
             //if the is released changes the flag
             buttons_arr[PORT_USER_BUTTON_ID].flag_pressed = false;
