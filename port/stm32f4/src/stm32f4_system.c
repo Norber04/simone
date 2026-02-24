@@ -296,7 +296,7 @@ void stm32f4_system_gpio_config_alternate(GPIO_TypeDef *p_port, uint8_t pin, uin
   p_port->AFR[(uint8_t)(pin / 8)] |= (alternate << displacement);
 }
 
-bool stm32f4_system_gpio_read(uint8_t pin)
+bool stm32f4_system_gpio_read(GPIO_TypeDef *p_port, uint8_t pin)
 {
   uint8_t mask_pin = BIT_POS_TO_MASK(pin);
 
@@ -305,7 +305,7 @@ bool stm32f4_system_gpio_read(uint8_t pin)
   return value;
 }
 
-void stm32f4_system_gpio_write(uint8_t pin, bool value)
+void stm32f4_system_gpio_write(GPIO_TypeDef *p_port, uint8_t pin, bool value)
 {
   uint8_t mask_pin = BIT_POS_TO_MASK(pin);
 
@@ -319,10 +319,10 @@ void stm32f4_system_gpio_write(uint8_t pin, bool value)
   }
 }
 
-void stm32f4_system_gpio_toggle(uint8_t pin)
+void stm32f4_system_gpio_toggle(GPIO_TypeDef *p_port,uint8_t pin)
 {
-  bool value = stm32f4_system_gpio_read(pin);
-  stm32f4_system_gpio_write(pin , !value);
+  bool value = stm32f4_system_gpio_read(p_port,pin);
+  stm32f4_system_gpio_write(p_port, pin , !value);
 }
 
 
