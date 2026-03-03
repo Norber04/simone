@@ -20,24 +20,7 @@
 #define PORT_USER_BUTTON_ID 0
 #define PORT_USER_BUTTON_DEBOUNCE_TIME_MS
 
-enum FSM_BUTTON
-{
-    BUTTON_RELEASED = 0, /*!< */
-    BUTTON_RELEASED_WAIT, /*!< */
-    BUTTON_PRESSED, /*!< */
-    BUTTON_PRESSED_WAIT /*!< */
-};
-
-
 /* Function prototypes and explanation -------------------------------------------------*/
-
-void check_button_pressed();
-void do_store_tick_pressed();
-
-void check_timeout();
-
-void check_button_released();
-void do_set_duration();
 
 /**
  * @brief Return the status of the button
