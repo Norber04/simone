@@ -58,9 +58,9 @@ void port_button_init(uint8_t button_id)
 
     /* TO-DO alumnos */
     // configures the button as input with no pullup neither pulldown
-    stm32f4_system_gpio_config(p_button->p_port, p_button->pin, 0x00U, 0x00U);
+    stm32f4_system_gpio_config(p_button->p_port, p_button->pin, STM32F4_GPIO_MODE_IN, STM32F4_GPIO_PUPDR_NOPULL);
     // allowis the interruption mode in both rising and falling edges, enables the interruption request
-    stm32f4_system_gpio_config_exti(p_button->p_port, p_button->pin, 0x01 || 0x02 || 0x08);
+    stm32f4_system_gpio_config_exti(p_button->p_port, p_button->pin, STM32F4_TRIGGER_RISING_EDGE | STM32F4_TRIGGER_FALLING_EDGE | STM32F4_TRIGGER_ENABLE_INTERR_REQ);
     //set the priority to 1 and subpriority to 0
     stm32f4_system_gpio_exti_enable(p_button->pin,1,0);
 }
