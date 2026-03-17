@@ -47,7 +47,7 @@ typedef struct
 #define STM32F4_KEYBOARD_MAIN_COL_3_GPIO    GPIOB
 #define STM32F4_KEYBOARD_MAIN_COL_3_PIN     5
 
-stm32f4_keyboard_hw_t 	keyboards_arr [];
+extern stm32f4_keyboard_hw_t 	keyboards_arr [];
 
 /* Function prototypes and explanation -------------------------------------------------*/
 

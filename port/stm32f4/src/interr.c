@@ -11,10 +11,26 @@
 // Include headers of different port elements:
 #include "port_button.h"
 #include "stm32f4_button.h"
-//#include "port_keyboard.h"
-//#include "stm32f4_keyboard.h"
+#include "port_keyboard.h"
+#include "stm32f4_keyboard.h"
 //#include "port_simone.h"
 
+
+void _check_column_interrupt(uint8_t column_index)
+{
+    stm32f4_keyboard_hw_t *p_keyboard = &keyboards_arr[PORT_KEYBOARD_MAIN_ID];
+
+    if(stm32f4_system_gpio_read(p_keyboard->p_col_ports[column_index],p_keyboard->p_col_pins[column_index]))
+    {
+        p_keyboard->flag_key_pressed = true;
+    }
+    else
+    {
+        p_keyboard->flag_key_pressed = false;
+        p_keyboard->col_idx_interrupt = column_index;
+    }
+    EXTI->PR = BIT_POS_TO_MASK(p_keyboard->p_col_pins[column_index]);
+}
 //------------------------------------------------------
 // INTERRUPT SERVICE ROUTINES
 //------------------------------------------------------
@@ -60,4 +76,36 @@ void EXTI15_10_IRQHandler(void)
         EXTI->PR = BIT_POS_TO_MASK(buttons_arr[PORT_USER_BUTTON_ID].pin);
 
     }
+    /*Keyboard*/
+    stm32f4_keyboard_hw_t *p_keyboard = &keyboards_arr[PORT_KEYBOARD_MAIN_ID];
+    for(uint8_t i = 0; i< p_keyboard->p_keyboard->num_cols;i++)
+    {
+        if(EXTI->PR & BIT_POS_TO_MASK(p_keyboard->p_col_pins[i]))
+        {
+            _check_column_interrupt(i);
+        }
+    }
+}
+
+void EXTI9_5_IRQHandler(){
+    stm32f4_keyboard_hw_t *p_keyboard = &keyboards_arr[PORT_KEYBOARD_MAIN_ID];
+    if(EXTI->PR & BIT_POS_TO_MASK(p_keyboard->p_col_pins[PORT_KEYBOARD_COL_0]))
+    {
+        _check_column_interrupt(PORT_KEYBOARD_COL_0);
+    }
+    if(EXTI->PR & BIT_POS_TO_MASK(p_keyboard->p_col_pins[PORT_KEYBOARD_COL_3]))
+    {
+        _check_column_interrupt(PORT_KEYBOARD_COL_3);
+    }
+}
+
+void EXTI4_IRQHandler()
+{
+    _check_column_interrupt(PORT_KEYBOARD_COL_2);
+}
+
+void TIM5_IRQHandler()
+{
+    TIM5->SR &= ~TIM_SR_UIF;
+    port_keyboard_set_row_timeout_status(PORT_KEYBOARD_MAIN_ID,true);
 }

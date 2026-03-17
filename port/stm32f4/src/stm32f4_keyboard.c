@@ -86,7 +86,8 @@ stm32f4_keyboard_hw_t 	keyboards_arr[] =
  * @return stm32f4_keyboard_hw_t* Pointer to the keyboard struct. 
  * @return NULL If the keyboard ID is not valid. 
  */
-stm32f4_keyboard_hw_t * _stm32f4_keyboard_get (uint8_t keyboard_id){
+stm32f4_keyboard_hw_t * _stm32f4_keyboard_get (uint8_t keyboard_id)
+{
     if (keyboard_id < sizeof(keyboards_arr) / sizeof(keyboards_arr[0]))
     {
         return &keyboards_arr[keyboard_id];
@@ -97,35 +98,38 @@ stm32f4_keyboard_hw_t * _stm32f4_keyboard_get (uint8_t keyboard_id){
     }
 }
 
-void _timer_scan_column_config(){
+void _timer_scan_column_config()
+{
     /*Enable the clock of the timer that controls the column scanning.*/
-    RCC -> APB1ENR|=RCC_APB1ENR_TIM2EN;
+    RCC -> APB1ENR|=RCC_APB1ENR_TIM5EN;
     /*Disable the counter of the timer*/
-    TIM2 -> CR1 &= ~TIM_CR1_CEN;
+    TIM5 -> CR1 &= ~TIM_CR1_CEN;
     /*Enable the autoreload preload*/
-    TIM2 -> CR1 |= TIM_CR1_ARPE;
+    TIM5 -> CR1 |= TIM_CR1_ARPE;
     /*Set the counter of the timer to 0*/
-    TIM2 -> CNT = 0;
+    TIM5 -> CNT = 0;
 
+    double SystemClock = (double)SystemCoreClock;
+    double t_inter = (double)PORT_KEYBOARDS_TIMEOUT_MS / 1000.0;
 
-    double systemClock = SystemCoreClock;
-    double psc = round((16.0*(10.0^6.0))/(65535.0+1.0)-1.0);
-    double arr = round((16.0*(10.0^6.0))/(psc + 1.0)-1.0);
+    double psc = round((SystemClock*t_inter)/(65535.0+1.0)-1.0);
+    double arr = round((SystemClock*t_inter)/(psc + 1.0)-1.0);
     if(arr > 65535.0){
         psc += 1.0;
-        arr = round((16.0*(10.0^6.0))/(psc + 1.0)-1.0);
+        arr = round((SystemClock*t_inter)/(psc + 1.0)-1.0);
     }
-    TIM2 -> ARR = arr;
-    TIM2 -> PSC = psc;
+    TIM5 -> ARR = arr;
+    TIM5 -> PSC = psc;
 
+  
     /*trigger an update event to set the arr and psc values*/
-    TIM2 -> EGR = TIM_EGR_UG;
+    TIM5 -> EGR = TIM_EGR_UG;
     /*Clear the update interrupt flag*/
-    TIM2 -> SR = ~TIM_SR_UIF;
+    TIM5 -> SR = ~TIM_SR_UIF;
     /*Enable the interrupts of the timer*/
-    TIM2 -> DIER |= TIM_DIER_UIE;
+    TIM5 -> DIER |= TIM_DIER_UIE;
     /*Set the priority of the timer interrupt */
-    NVIC_SetPriority ( TIM2_IRQn,NVIC_EncodePriority(NVIC_GetPriorityGrouping (),1,0));
+    NVIC_SetPriority ( TIM5_IRQn,NVIC_EncodePriority(NVIC_GetPriorityGrouping (),2,0));
 } 	
 
 /* Public functions -----------------------------------------------------------*/
@@ -138,14 +142,31 @@ void port_keyboard_init(uint8_t keyboard_id)
 
     /* Rows configuration */
     for(uint8_t i = 0; i<p_keyboard->p_keyboard->num_rows; i++){
-        stm32f4_system_gpio_config(p_keyboard->p_row_ports[i],p_keyboard->p_row_pins[i],STM32F4_GPIO_MODE_OUT,STM32F4_GPIO_PUPDR_NOPULL);
+        stm32f4_system_gpio_config(
+            p_keyboard->p_row_ports[i],
+            p_keyboard->p_row_pins[i],
+            STM32F4_GPIO_MODE_OUT,
+            STM32F4_GPIO_PUPDR_NOPULL);
     }
     /* Columns configuration */
     for(uint8_t i = 0; i<p_keyboard->p_keyboard->num_cols; i++){
-        stm32f4_system_gpio_config(p_keyboard->p_col_ports[i],p_keyboard->p_col_pins[i],STM32F4_GPIO_MODE_IN,STM32F4_GPIO_PUPDR_PULLDOWN);
-        stm32f4_system_gpio_config_exti(p_keyboard->p_col_ports[i],p_keyboard->p_col_pins[i],STM32F4_TRIGGER_BOTH_EDGE);
-        stm32f4_system_gpio_exti_enable(p_keyboard->p_col_pins[i],1,1);
+        stm32f4_system_gpio_config(
+            p_keyboard->p_col_ports[i],
+            p_keyboard->p_col_pins[i],
+            STM32F4_GPIO_MODE_IN,
+            STM32F4_GPIO_PUPDR_PULLDOWN);
+
+        stm32f4_system_gpio_config_exti(
+            p_keyboard->p_col_ports[i],
+            p_keyboard->p_col_pins[i],
+            STM32F4_TRIGGER_BOTH_EDGE | STM32F4_TRIGGER_ENABLE_INTERR_REQ);
+
+        stm32f4_system_gpio_exti_enable(
+            p_keyboard->p_col_pins[i],
+            1,
+            1);
     }
+    
     /* Clean/set all configurations */
     p_keyboard->col_idx_interrupt = -1; 
     /* Configure timer */
@@ -158,7 +179,7 @@ void port_keyboard_excite_row (uint8_t keyboard_id, uint8_t row_idx)
     stm32f4_keyboard_hw_t *p_keyboard = _stm32f4_keyboard_get(keyboard_id);
     for(uint8_t i = 0; i<p_keyboard->p_keyboard->num_rows; i++)
     {
-        if(p_keyboard->p_row_pins[i] = row_idx)
+        if(p_keyboard->p_row_pins[i] == row_idx)
         {
             stm32f4_system_gpio_write(p_keyboard->p_row_ports[i],p_keyboard->p_row_pins[i],true);
         }
@@ -169,7 +190,7 @@ void port_keyboard_excite_row (uint8_t keyboard_id, uint8_t row_idx)
 void port_keyboard_excite_next_row 	(uint8_t keyboard_id) 
 {
     stm32f4_keyboard_hw_t *p_keyboard = _stm32f4_keyboard_get(keyboard_id);
-    p_keyboard->current_excited_row = (p_keyboard->current_excited_row + 1)%standard_keyboard.num_rows);
+    p_keyboard->current_excited_row = (p_keyboard->current_excited_row + 1) %p_keyboard->p_keyboard->num_rows;
     port_keyboard_excite_row(keyboard_id,p_keyboard->current_excited_row);
 }
 
@@ -179,9 +200,23 @@ bool port_keyboard_get_key_pressed_status (uint8_t keyboard_id)
     return p_keyboard->flag_key_pressed;
 }
 
-void port_keyboard_set_key_pressed_status (uint8_t keyboard_id, bool status);
-bool port_keyboard_get_row_timeout_status (uint8_t keyboard_id);
-void port_keyboard_set_row_timeout_status (uint8_t keyboard_id, bool status);
+void port_keyboard_set_key_pressed_status (uint8_t keyboard_id, bool status)
+{
+    stm32f4_keyboard_hw_t *p_keyboard = _stm32f4_keyboard_get(keyboard_id);
+    p_keyboard->flag_key_pressed = status;
+}
+
+bool port_keyboard_get_row_timeout_status (uint8_t keyboard_id)
+{
+    stm32f4_keyboard_hw_t *p_keyboard = _stm32f4_keyboard_get(keyboard_id);
+    return p_keyboard->flag_row_timeout;
+}
+
+void port_keyboard_set_row_timeout_status (uint8_t keyboard_id, bool status)
+{
+    stm32f4_keyboard_hw_t *p_keyboard = _stm32f4_keyboard_get(keyboard_id);
+    p_keyboard->flag_row_timeout = status;
+}
 
 char port_keyboard_get_key_value (uint8_t keyboard_id)
 {
@@ -193,4 +228,30 @@ char port_keyboard_get_invalid_key_value (uint8_t keyboard_id)
 {
     stm32f4_keyboard_hw_t *p_keyboard = _stm32f4_keyboard_get(keyboard_id);
     return p_keyboard->p_keyboard->null_key;
+}
+
+void port_keyboard_start_scan(uint8_t keyboard_id)
+{
+    port_keyboard_set_row_timeout_status(keyboard_id,true);
+    //reset the CNT
+    TIM5 -> CNT = 0;
+    //excite the first row
+    port_keyboard_excite_row(keyboard_id,0);
+    //enable the interupt
+    NVIC_EnableIRQ(TIM5_IRQn);
+    //Enable the counter
+    TIM5->CR1 |= TIM_CR1_CEN;
+}
+
+void port_keyboard_stop_scan(uint8_t keyboard_id)
+{
+    stm32f4_keyboard_hw_t *p_keyboard = _stm32f4_keyboard_get(keyboard_id);
+    /*Disable the counter of the timer*/
+    TIM5 -> CR1 &= ~TIM_CR1_CEN;
+    /*Disable the timer interrupt*/
+    NVIC_DisableIRQ(TIM5_IRQn);
+    for(uint8_t i = 0; i<p_keyboard->p_keyboard->num_rows; i++)
+    {
+        stm32f4_system_gpio_write(p_keyboard->p_row_ports[i],p_keyboard->p_row_pins[i],false);
+    }
 }
