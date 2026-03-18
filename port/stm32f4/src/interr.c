@@ -19,15 +19,11 @@
 void _check_column_interrupt(uint8_t column_index)
 {
     stm32f4_keyboard_hw_t *p_keyboard = &keyboards_arr[PORT_KEYBOARD_MAIN_ID];
+    GPIO_TypeDef *p_port = p_keyboard->p_col_ports[column_index];
+    uint8_t pin = p_keyboard->p_col_pins[column_index];
+    bool condicion = stm32f4_system_gpio_read(p_port,pin);
 
-    if(stm32f4_system_gpio_read(p_keyboard->p_col_ports[column_index],p_keyboard->p_col_pins[column_index]))
-    {
-        p_keyboard->flag_key_pressed = true;
-    }
-    else
-    {
-        p_keyboard->flag_key_pressed = false;
-    }
+    p_keyboard->flag_key_pressed = condicion;
     p_keyboard->col_idx_interrupt = column_index;
     EXTI->PR = BIT_POS_TO_MASK(p_keyboard->p_col_pins[column_index]);
 }
@@ -63,18 +59,15 @@ void EXTI15_10_IRQHandler(void)
     /*ISR user button*/
     if (EXTI->PR & BIT_POS_TO_MASK(buttons_arr[PORT_USER_BUTTON_ID].pin))
     {
-        if (stm32f4_system_gpio_read(buttons_arr[PORT_USER_BUTTON_ID].p_port,buttons_arr[PORT_USER_BUTTON_ID].pin))
-        {
-            //if the is released changes the flag
-            buttons_arr[PORT_USER_BUTTON_ID].flag_pressed = false;
-        }
-        else
-        {
-            buttons_arr[PORT_USER_BUTTON_ID].flag_pressed = true;
-        }
-        // cleans the pendig register
-        EXTI->PR = BIT_POS_TO_MASK(buttons_arr[PORT_USER_BUTTON_ID].pin);
+        GPIO_TypeDef *p_port = buttons_arr[PORT_USER_BUTTON_ID].p_port;
+        uint8_t pin = buttons_arr[PORT_USER_BUTTON_ID].pin;
+        bool condition = stm32f4_system_gpio_read(p_port,pin);
 
+        //if the is released changes the flag
+        buttons_arr[PORT_USER_BUTTON_ID].flag_pressed = !condition;
+
+        // cleans the pendig register
+        EXTI->PR = BIT_POS_TO_MASK(pin);
     }
     /*Keyboard*/
     if(EXTI->PR & BIT_POS_TO_MASK(keyboards_arr[PORT_KEYBOARD_MAIN_ID].p_col_pins[PORT_KEYBOARD_COL_1]))

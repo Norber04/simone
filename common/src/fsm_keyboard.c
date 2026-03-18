@@ -125,7 +125,6 @@ void fsm_keyboard_init(fsm_keyboard_t *p_fsm_keyboard, uint32_t debounce_time,ui
     // Initialize the FSM
     fsm_init(&p_fsm_keyboard->f, fsm_trans_keyboard);
 
-    /* TODO alumnos: */
     // Initialize the fields of the FSM structure
     p_fsm_keyboard->debounce_time_ms = debounce_time;
     p_fsm_keyboard->keyboard_id = keyboard_id;
