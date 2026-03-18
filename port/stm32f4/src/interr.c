@@ -27,8 +27,8 @@ void _check_column_interrupt(uint8_t column_index)
     else
     {
         p_keyboard->flag_key_pressed = false;
-        p_keyboard->col_idx_interrupt = column_index;
     }
+    p_keyboard->col_idx_interrupt = column_index;
     EXTI->PR = BIT_POS_TO_MASK(p_keyboard->p_col_pins[column_index]);
 }
 //------------------------------------------------------
@@ -77,23 +77,18 @@ void EXTI15_10_IRQHandler(void)
 
     }
     /*Keyboard*/
-    stm32f4_keyboard_hw_t *p_keyboard = &keyboards_arr[PORT_KEYBOARD_MAIN_ID];
-    for(uint8_t i = 0; i< p_keyboard->p_keyboard->num_cols;i++)
+    if(EXTI->PR & BIT_POS_TO_MASK(keyboards_arr[PORT_KEYBOARD_MAIN_ID].p_col_pins[PORT_KEYBOARD_COL_1]))
     {
-        if(EXTI->PR & BIT_POS_TO_MASK(p_keyboard->p_col_pins[i]))
-        {
-            _check_column_interrupt(i);
-        }
+        _check_column_interrupt(PORT_KEYBOARD_COL_1);
     }
 }
 
 void EXTI9_5_IRQHandler(){
-    stm32f4_keyboard_hw_t *p_keyboard = &keyboards_arr[PORT_KEYBOARD_MAIN_ID];
-    if(EXTI->PR & BIT_POS_TO_MASK(p_keyboard->p_col_pins[PORT_KEYBOARD_COL_0]))
+    if(EXTI->PR & BIT_POS_TO_MASK(keyboards_arr[PORT_KEYBOARD_MAIN_ID].p_col_pins[PORT_KEYBOARD_COL_0]))
     {
         _check_column_interrupt(PORT_KEYBOARD_COL_0);
     }
-    if(EXTI->PR & BIT_POS_TO_MASK(p_keyboard->p_col_pins[PORT_KEYBOARD_COL_3]))
+    if(EXTI->PR & BIT_POS_TO_MASK(keyboards_arr[PORT_KEYBOARD_MAIN_ID].p_col_pins[PORT_KEYBOARD_COL_3]))
     {
         _check_column_interrupt(PORT_KEYBOARD_COL_3);
     }
@@ -101,7 +96,10 @@ void EXTI9_5_IRQHandler(){
 
 void EXTI4_IRQHandler()
 {
-    _check_column_interrupt(PORT_KEYBOARD_COL_2);
+    if(EXTI->PR & BIT_POS_TO_MASK(keyboards_arr[PORT_KEYBOARD_MAIN_ID].p_col_pins[PORT_KEYBOARD_COL_2]))
+    {
+        _check_column_interrupt(PORT_KEYBOARD_COL_2);
+    }
 }
 
 void TIM5_IRQHandler()

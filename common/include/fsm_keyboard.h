@@ -31,7 +31,7 @@ typedef struct
     uint32_t 	tick_pressed;       /*!< Number of ticks when the keyboard was pressed */
     char        key_value;          /*!< Char of the key */
     uint32_t 	keyboard_id;        /*!< Keyboard ID*/
-    char        invalid_key
+    char        invalid_key;
 }fsm_keyboard_t;
 
 /* Function prototypes and explanation -------------------------------------------------*/
