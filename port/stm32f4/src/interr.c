@@ -25,8 +25,9 @@ void _check_column_interrupt(uint8_t column_index)
 
     p_keyboard->flag_key_pressed = condicion;
     p_keyboard->col_idx_interrupt = column_index;
-    EXTI->PR = BIT_POS_TO_MASK(p_keyboard->p_col_pins[column_index]);
+    EXTI->PR = BIT_POS_TO_MASK(pin);
 }
+
 
 //------------------------------------------------------
 // INTERRUPT SERVICE ROUTINES
@@ -86,7 +87,12 @@ void EXTI9_5_IRQHandler(){
     {
         _check_column_interrupt(PORT_KEYBOARD_COL_3);
     }
+    //limpiamos las otras interrupciones
+    if (EXTI->PR & (0x03e0)) {
+        EXTI->PR = 0x03e0;
+    }
 }
+
 
 void EXTI4_IRQHandler()
 {
@@ -95,9 +101,16 @@ void EXTI4_IRQHandler()
         _check_column_interrupt(PORT_KEYBOARD_COL_2);
     }
 }
-
+/*
 void TIM5_IRQHandler()
 {
     TIM5->SR &= ~TIM_SR_UIF;
+
     port_keyboard_set_row_timeout_status(PORT_KEYBOARD_MAIN_ID,true);
+}
+*/
+void TIM5_IRQHandler (void)	{
+    TIM5->SR &= ~TIM_SR_UIF;
+        stm32f4_keyboard_hw_t *p_hw = &keyboards_arr[PORT_KEYBOARD_MAIN_ID];
+        p_hw->flag_row_timeout = true;
 }
