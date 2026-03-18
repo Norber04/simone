@@ -24,9 +24,9 @@
 /* State machine input or transition functions */
 
 /**
- * @brief 
+ * @brief Check if the timeout to activate a new row and scan columns has passed. 
  * 
- * @param p_this 
+ * @param p_this Pointer to an fsm_t struct than contains an fsm_keyboard_t.
  * @return true 
  * @return false 
  */
@@ -37,10 +37,10 @@ static bool check_row_timeout (fsm_t *p_this)
 }
 
 /**
- * @brief 
+ * @brief Check if the keyboard has been pressed. 
  * 
- * @param p_this 
- * @return true 
+ * @param p_this Pointer to an fsm_t struct than contains an fsm_keyboard_t. 
+ * @return true the keyboard is pressed
  * @return false 
  */
 static bool check_keyboard_pressed(fsm_t *p_this)
@@ -49,10 +49,10 @@ static bool check_keyboard_pressed(fsm_t *p_this)
     return port_keyboard_get_key_pressed_status(p_keyboard->keyboard_id);
 }
 /**
- * @brief 
+ * @brief Check if the keyboard has been released. 
  * 
- * @param p_this 
- * @return true 
+ * @param p_this 	Pointer to an fsm_t struct than contains an fsm_keyboard_t. 
+ * @return true the keyboard has been released
  * @return false 
  */
 static bool check_keyboard_released(fsm_t *p_this)
@@ -61,10 +61,10 @@ static bool check_keyboard_released(fsm_t *p_this)
     return !port_keyboard_get_key_pressed_status(p_keyboard->keyboard_id);
 }
 /**
- * @brief 
+ * @brief Check if the debounce-time has passed. 
  * 
- * @param p_this 
- * @return true 
+ * @param p_this Pointer to an fsm_t struct than contains an fsm_keyboard_t. 
+ * @return true if the current system tick is higher than the field next timeout
  * @return false 
  */
 static bool check_timeout(fsm_t *p_this)
@@ -74,10 +74,11 @@ static bool check_timeout(fsm_t *p_this)
 }
 
 /* State machine output or action functions */
+
 /**
- * @brief 
+ * @brief Clean the row timeout flag and update the row to be excited. 
  * 
- * @param p_this 
+ * @param p_this Pointer to an fsm_t struct than contains an fsm_keyboard_t
  */
 void do_excite_next_row(fsm_t *p_this)
 {
@@ -87,9 +88,9 @@ void do_excite_next_row(fsm_t *p_this)
 }
 
 /**
- * @brief 
+ * @brief Store the system tick when the keyboard was pressed. 
  * 
- * @param p_this 
+ * @param p_this Pointer to an fsm_t struct than contains an fsm_keyboard_t. 
  */
 static void do_store_tick_pressed(fsm_t *p_this)
 {
@@ -98,9 +99,9 @@ static void do_store_tick_pressed(fsm_t *p_this)
     p_keyboard->next_timeout = port_system_get_millis() + p_keyboard->debounce_time_ms;
 }
 /**
- * @brief 
+ * @brief Store the key value of the keyboard press. 
  * 
- * @param p_this 
+ * @param p_this Pointer to an fsm_t struct than contains an fsm_keyboard_t. 
  */
 static void do_set_key_value(fsm_t *p_this)
 {
@@ -120,6 +121,13 @@ fsm_trans_t fsm_trans_keyboard[] = {
 };
 
 /* Other auxiliary functions */
+/**
+ * @brief This function initializes the default values of the FSM struct and calls to the port to initialize the associated HW given the ID.
+ * 
+ * @param p_fsm_keyboard Pointer to the keyboard FSM. 
+ * @param debounce_time Anti-debounce time in milliseconds 
+ * @param keyboard_id Unique keyboard identifier number 
+ */
 void fsm_keyboard_init(fsm_keyboard_t *p_fsm_keyboard, uint32_t debounce_time,uint8_t keyboard_id)
 {
     // Initialize the FSM
@@ -174,4 +182,12 @@ void fsm_keyboard_fire(fsm_keyboard_t *p_fsm)
     fsm_fire(&p_fsm->f);
 }
 
+bool fsm_keyboard_check_activity (fsm_keyboard_t *p_fsm)
+{
+    return false;
+}
 
+void fsm_keyboard_destroy (fsm_keyboard_t *p_fsm)
+{
+    fsm_destroy(&p_fsm->f);
+}
