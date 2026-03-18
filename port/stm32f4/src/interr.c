@@ -27,6 +27,7 @@ void _check_column_interrupt(uint8_t column_index)
     p_keyboard->col_idx_interrupt = column_index;
     EXTI->PR = BIT_POS_TO_MASK(p_keyboard->p_col_pins[column_index]);
 }
+
 //------------------------------------------------------
 // INTERRUPT SERVICE ROUTINES
 //------------------------------------------------------

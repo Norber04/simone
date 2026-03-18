@@ -300,7 +300,7 @@ bool stm32f4_system_gpio_read(GPIO_TypeDef *p_port, uint8_t pin)
 {
   uint8_t mask_pin = BIT_POS_TO_MASK(pin);
 
-  bool value = (bool)(GPIOA -> IDR & mask_pin);
+  bool value = (bool)(p_port->IDR & mask_pin);
 
   return value;
 }
@@ -311,11 +311,11 @@ void stm32f4_system_gpio_write(GPIO_TypeDef *p_port, uint8_t pin, bool value)
 
   if(value)
   {
-      GPIOA -> BSRR = mask_pin;
+      p_port->BSRR = mask_pin;
   }
   else
   {
-      GPIOA -> BSRR = mask_pin << 16;
+      p_port->BSRR = mask_pin << 16;
   }
 }
 
