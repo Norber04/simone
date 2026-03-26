@@ -1,8 +1,8 @@
 /**
  * @file port_keyboard.h
  * @brief Header for the portable functions to interact with the HW of the keyboards. The functions must be implemented in the platform-specific code.
- * @author alumno1
- * @author alumno2
+ * @author Norberto de los Rios Gutierrez
+ * @author Alejandro Suarez Suarez
  * @date fecha
  */
 #ifndef PORT_KEYBOARD_H_

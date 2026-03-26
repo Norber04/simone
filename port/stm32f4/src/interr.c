@@ -53,7 +53,7 @@ void SysTick_Handler(void)
 }
 
 /**
- * @brief This function handles the interruption from the user button 
+ * @brief This function handles the interruption from 15 to 10
  * 
  */
 void EXTI15_10_IRQHandler(void)
@@ -78,6 +78,10 @@ void EXTI15_10_IRQHandler(void)
     }
 }
 
+/**
+ * @brief This function handles the interruption from 9 to 5
+ * 
+ */
 void EXTI9_5_IRQHandler(){
     if(EXTI->PR & BIT_POS_TO_MASK(keyboards_arr[PORT_KEYBOARD_MAIN_ID].p_col_pins[PORT_KEYBOARD_COL_0]))
     {
@@ -93,7 +97,10 @@ void EXTI9_5_IRQHandler(){
     }
 }
 
-
+/**
+ * @brief This function handles the interruption 4
+ * 
+ */
 void EXTI4_IRQHandler()
 {
     if(EXTI->PR & BIT_POS_TO_MASK(keyboards_arr[PORT_KEYBOARD_MAIN_ID].p_col_pins[PORT_KEYBOARD_COL_2]))
@@ -101,16 +108,13 @@ void EXTI4_IRQHandler()
         _check_column_interrupt(PORT_KEYBOARD_COL_2);
     }
 }
-/*
-void TIM5_IRQHandler()
-{
-    TIM5->SR &= ~TIM_SR_UIF;
 
-    port_keyboard_set_row_timeout_status(PORT_KEYBOARD_MAIN_ID,true);
-}
-*/
+/**
+ * @brief This function handles the interruption from Timer 5
+ * 
+ */
 void TIM5_IRQHandler (void)	{
     TIM5->SR &= ~TIM_SR_UIF;
-        stm32f4_keyboard_hw_t *p_hw = &keyboards_arr[PORT_KEYBOARD_MAIN_ID];
-        p_hw->flag_row_timeout = true;
+    stm32f4_keyboard_hw_t *p_hw = &keyboards_arr[PORT_KEYBOARD_MAIN_ID];
+    p_hw->flag_row_timeout = true;
 }

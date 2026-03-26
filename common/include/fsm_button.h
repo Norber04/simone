@@ -1,8 +1,8 @@
 /**
  * @file fsm_button.h
  * @brief Header for fsm_button.c file.
- * @author alumno1
- * @author alumno2
+ * @author Norberto de los Rios Gutierrez
+ * @author Alejandro Suarez Suarez
  * @date fecha
  */
 
