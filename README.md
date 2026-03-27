@@ -7,17 +7,9 @@ Acceso a la documentación y API del proyecto en [este enlace](https://sdg2dieup
 * **Alumno 1** - email: [n.delosrios@alumnos.upm.es](mailto:n.delosrios@alumnos.upm.es)
 * **Alumno 2** - email: [alejandro.suarez@alumnos.upm.es](mailto:alejandro.suarez@alumnos.upm.es)
 
-Ponga una breve descripción del proyecto **aquí** en castellano e inglés.
+Este proyecto que codifica el clasico juego simone en una placa stm32f4.
 
-Puede añadir una imagen de portada **de su propiedad** aquí. Por ejemplo, del montaje final, o una captura de osciloscopio, etc.
-
-**Las imágenes se deben guardar en la carpeta `docs/assets/imgs/` y se pueden incluir en el documento de la siguiente manera:**
-
-```markdown
-![Texto alternativo](docs/assets/imgs/imagen.png)
-```
-
-NOTA: **NO** añada el código ```markdown``` en el fichero `README.md` de su proyecto, sino lo de dentro. Este código es un para mostrar de forma literal cómo se puede añadir una imagen al fichero `README.md`.
+This proyect implements the classic game simone into a stm32f4 board.
 
 **Añada un enlace a un vídeo público de su propiedad aquí con la demostración del proyecto explicando lo que haya hecho en la versión V5.**
 
@@ -31,56 +23,11 @@ NOTA: **NO** añada el código ```markdown``` sino lo de dentro. Este código es
 
 ## Version 1
 
-Breve descripción de la versión 1.
-
-* Para poner un texto en negrita se usa el símbolo `**` de manera consecutiva. Por ejemplo: **Texto en negrita**
-* Para poner un texto en cursiva se usa el símbolo `*` de manera consecutiva. Por ejemplo: *Texto en cursiva*
-* Para poner un texto en cursiva y negrita se usa el símbolo `***` de manera consecutiva. Por ejemplo: ***Texto en cursiva y negrita***
-
-Para añadir subsecciones se usa el símbolo `#` de manera consecutiva. Por ejemplo:
-
-### Subsección 1
-
-Breve descripción de la subsección 1.
-
-Para añadir una lista de elementos se usa el símbolo `-` de manera consecutiva. Por ejemplo:
-
-* Elemento 1
-* Elemento 2
-* Elemento 3
-
-Para añadir una lista de elementos numerados se usa el símbolo `1.` de manera consecutiva. Por ejemplo:
-
-1. Elemento 1
-2. Elemento 2
-3. Elemento 3
-
-Para añadir un enlace a una página web se usa el siguiente código:
-
-```markdown
-Enlace a [Google](https://www.google.com).
-```
-
-NOTA: **NO** añada el código ```markdown``` sino lo de dentro. Este código es un para mostrar de forma literal cómo se puede añadir un enlace a una página web al fichero `README.md`.
-
-Puede añadir tablas de la siguiente manera:
-
-| Columna 1 | Columna 2 | Columna 3 |
-| --------- | --------- | --------- |
-| Valor 1   | Valor 2   | Valor 3   |
-| Valor 4   | Valor 5   | Valor 6   |
-
-Para añadir un enlace a un fichero `.c` o `.h` puede usar el siguiente código. Se trata de enlaces a ficheros `.html` que se generan automáticamente con la documentación del código al ejecutar Doxygen y que se encuentran en la carpeta `docs/html/`.
-
-```markdown
-Enlace a la [FSM de Version 1](fsm__button_8c.html).
-```
-
-NOTA: **NO** añada el código ```markdown``` sino lo de dentro. Este código es un para mostrar de forma literal cómo se puede añadir un enlace a un fichero `.c` o `.h` al fichero `README.md`.
+Codificacion del boton de usuario de la placa para el uso en el programa.
 
 ## Version 2
 
-Breve descripción de la versión 2.
+Codificacion del teclado para el uso en el programa
 
 ## Version 3
 
