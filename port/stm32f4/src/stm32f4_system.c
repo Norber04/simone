@@ -22,8 +22,8 @@ extern void initialise_monitor_handles(void);
 #define TICK_FREQ_1KHZ 1U                            /*!< Frequency in kHz of the System tick */
 #define NVIC_PRIORITY_GROUP_0 ((uint32_t)0x00000007) /*!< 0 bit  for pre-emption priority, \
                                                          4 bits for subpriority */
-#define NVIC_PRIORITY_GROUP_4 ((uint32_t)0x00000004) /*!< 4 bits for pre-emption priority, \
-                                                         0 bit  for subpriority */
+#define NVIC_PRIORITY_GROUP_5 ((uint32_t)0x00000004) /*!< 3 bits for pre-emption priority, \
+                                                         1 bit  for subpriority */
 /* Power */
 #define POWER_REGULATOR_VOLTAGE_SCALE3 0x01 /*!< Scale 3 mode: the maximum value of fHCLK is 120 MHz. */
 
