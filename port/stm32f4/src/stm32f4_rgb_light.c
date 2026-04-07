@@ -29,8 +29,8 @@ stm32f4_rgb_light_hw_t 	rgb_lights_arr [] = {
         .pin_green = STM32F4_RGB_LIGHT_G_PIN,
         .p_port_blue = STM32F4_RGB_LIGHT_B_GPIO,
         .pin_blue = STM32F4_RGB_LIGHT_B_PIN
-    }
-}
+    },
+};
 
 /* Private functions -----------------------------------------------------------*/
 stm32f4_rgb_light_hw_t *_stm32f4_rgb_light_get(uint8_t rgb_light_id)
@@ -56,7 +56,7 @@ void 	_timer_pwm_config (uint8_t rgb_light_id)
     TIM4 -> CNT = 0;
 
     double SystemClock = (double)SystemCoreClock;
-    double t_inter = (double)PORT_KEYBOARDS_TIMEOUT_MS / 1000.0;
+    double t_inter = (double)PORT_RGB_LIGHT_PWM_PERIOD_MS / 1000.0;
 
     double psc = round((SystemClock*t_inter)/(65535.0+1.0)-1.0);
     double arr = round((SystemClock*t_inter)/(psc + 1.0)-1.0);
@@ -75,24 +75,56 @@ void 	_timer_pwm_config (uint8_t rgb_light_id)
     TIM4 -> CCER &= ~(TIM_CCER_CC1NP | TIM_CCER_CC2NP | TIM_CCER_CC3NP | TIM_CCER_CC4NP);
 
     /*Set PWM mode*/
-    TIM4.
+    TIM4 -> CCMR1 &= ~(TIM_CCMR1_OC1M | TIM_CCMR1_OC2M);
+    TIM4 -> CCMR1 &= ~(TIM_CCMR1_OC1PE | TIM_CCMR1_OC2PE);
+    TIM4 -> CCMR2 &= ~(TIM_CCMR2_OC3M | TIM_CCMR2_OC4M);
+    TIM4 -> CCMR2 &= ~(TIM_CCMR2_OC3PE | TIM_CCMR2_OC4PE);
+    
 
     /*trigger an update event to set the arr and psc values*/
     TIM5 -> EGR = TIM_EGR_UG;
-    /*Clear the update interrupt flag*/
-    TIM5 -> SR = ~TIM_SR_UIF;
-    /*Enable the interrupts of the timer*/
-    TIM5 -> DIER |= TIM_DIER_UIE;
-    /*Set the priority of the timer interrupt */
-    NVIC_SetPriority ( TIM5_IRQn,NVIC_EncodePriority(NVIC_GetPriorityGrouping (),2,0));
 }
 
 /* Public functions -----------------------------------------------------------*/
 void 	port_rgb_light_init (uint8_t rgb_light_id)
 {
+    stm32f4_rgb_light_hw_t *p_rgb_light = _stm32f4_rgb_light_get(rgb_light_id);
 
+    /*config alternate mode no pull*/
+    stm32f4_system_gpio_config(p_rgb_light->p_port_red,p_rgb_light->pin_red,STM32F4_GPIO_MODE_AF,STM32F4_GPIO_PUPDR_NOPULL);
+    stm32f4_system_gpio_config(p_rgb_light->p_port_green,p_rgb_light->pin_green,STM32F4_GPIO_MODE_AF,STM32F4_GPIO_PUPDR_NOPULL);
+    stm32f4_system_gpio_config(p_rgb_light->p_port_blue,p_rgb_light->pin_blue,STM32F4_GPIO_MODE_AF,STM32F4_GPIO_PUPDR_NOPULL);
+
+    /*alternate function*/
+    stm32f4_system_gpio_config_alternate(p_rgb_light->p_port_red,p_rgb_light->pin_red,STM32F4_AF2);
+    stm32f4_system_gpio_config_alternate(p_rgb_light->p_port_green,p_rgb_light->pin_green,STM32F4_AF2);
+    stm32f4_system_gpio_config_alternate(p_rgb_light->p_port_blue,p_rgb_light->pin_blue,STM32F4_AF2);
+
+    _timer_pwm_config(rgb_light_id);
+    port_rgb_light_set_rgb(rgb_light_id,color_off);
 }
 void 	port_rgb_light_set_rgb (uint8_t rgb_light_id, rgb_color_t color)
 {
+    if (rgb_light_id = PORT_RGB_LIGHT_ID)
+    {
+        /*disable the timer*/
+        TIM4->CR1 &= ~TIM_CR1_CEN;
 
+        if (color.r != color.g && color.r != color.b && color.r != 0)
+        {
+            if (color.r == 0)
+            {
+                TIM4 -> CCER &= ~(TIM_CCER_CC1E);
+            }
+            else
+            {
+                /*TODO set the duty cycle, enable the channel*/
+            }
+        }
+        else 
+        {
+            TIM4 -> CCER &= ~(TIM_CCER_CC1E | TIM_CCER_CC2E | TIM_CCER_CC3E);
+        }
+
+    }
 }

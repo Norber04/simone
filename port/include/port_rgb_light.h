@@ -17,6 +17,7 @@
 /* Defines and enums ----------------------------------------------------------*/
 /* Defines */
 #define PORT_RGB_LIGHT_ID 0
+#define PORT_RGB_LIGHT_PWM_PERIOD_MS 50
 /* Function prototypes and explanation -------------------------------------------------*/
 /**
  * @brief Configure the HW specifications of a given RGB light.
