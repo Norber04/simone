@@ -23,22 +23,79 @@
 
 void _correct_rgb_light_levels	(rgb_color_t * p_color, uint8_t intensity_perc )
 {
-    uint32_t arr = TIM4->ARR;
-    /*==========RED=============*/
-    uint32_t duty_r = (color.r * arr) / COLOR_RGB_MAX_VALUE;
-    TIM4->CCR1 = duty_r;
-    TIM4->CCER |= TIM_CCER_CC1E;
-}	
-
-void port_rgb_light_set_rgb	(uint8_t rgb_light_id, rgb_color_t color)
-{
-
+    float correct_rgb = COLOR_RGB_MAX_VALUE * intensity_perc / MAX_LEVEL_INTENSITY + 0.5;
+    p_color->r = (uint8_t)correct_rgb;
+    p_color->g = (uint8_t)correct_rgb;
+    p_color->b = (uint8_t)correct_rgb;
 }		
 /* State machine input or transition functions */
+static bool check_active(fsm_t * p_this)
+{
+    fsm_rgb_light_t *p_rgb_light =(fsm_rgb_light_t *)p_this;
+    return p_rgb_light->status;
+}	
+
+
+static bool check_off(fsm_t * p_this)
+{
+    fsm_rgb_light_t *p_rgb_light =(fsm_rgb_light_t *)p_this;
+    return !p_rgb_light->status;
+}
+
+
+static bool check_set_new_color	(fsm_t * p_this)
+{
+    fsm_rgb_light_t *p_rgb_light =(fsm_rgb_light_t *)p_this;
+    return p_rgb_light->new_color;
+}
 
 /* State machine output or action functions */
 
+
+static void do_set_color(fsm_t * p_this)
+{
+    fsm_rgb_light_t *p_rgb_light =(fsm_rgb_light_t *)p_this;
+    _correct_rgb_light_levels(&p_rgb_light->color,p_rgb_light->intensity_perc);
+    port_rgb_light_set_rgb(p_rgb_light->rgb_light_id,p_rgb_light->color);
+    p_rgb_light->new_color = false;
+    p_rgb_light->idle = true;
+}
+
+static void do_set_off(	fsm_t * p_this)	
+{
+    fsm_rgb_light_t *p_rgb_light =(fsm_rgb_light_t *)p_this;
+    port_rgb_light_set_rgb(p_rgb_light->rgb_light_id,color_off);
+    p_rgb_light->idle = false;
+}
+
+
+static void do_set_on(fsm_t * p_this)
+{
+    fsm_rgb_light_t *p_rgb_light =(fsm_rgb_light_t *)p_this;
+    port_rgb_light_set_rgb(p_rgb_light->rgb_light_id,color_off);
+}
+
+
+fsm_rgb_light_t fsm_trans_rgb_light[] = {
+    {IDLE_RGB,      check_active,           SET_COLOR,      do_set_on},
+    {SET_COLOR,     check_set_new_color,    SET_COLOR,      do_set_color},
+    {SET_COLOR,     check_off,              IDLE_RGB,       do_set_off},
+    {-1,            NULL,                   -1,             NULL}
+};
 /* Other auxiliary functions */
+static void fsm_rgb_light_init(	fsm_rgb_light_t * p_fsm_rgb_light, uint8_t rgb_light_id)
+{
+    fsm_init(&p_fsm_rgb_light ,fsm_trans_rgb_light);
+
+    p_fsm_rgb_light->rgb_light_id = rgb_light_id;
+    p_fsm_rgb_light->intensity_perc = MAX_LEVEL_INTENSITY;
+    p_fsm_rgb_light->color = color_off;
+    p_fsm_rgb_light->new_color = false;
+    p_fsm_rgb_light->idle = false;
+    p_fsm_rgb_light->status = false;
+
+    port_rgb_light_init(&p_fsm_rgb_light->rgb_light_id);
+}	
 
 /* Public functions -----------------------------------------------------------*/
 fsm_rgb_light_t *fsm_rgb_light_new(uint8_t rgb_light_id)
@@ -66,7 +123,7 @@ It is used to check the transitions and execute the actions
 of the RGB light FSM.*/
 void fsm_rgb_light_fire (fsm_rgb_light_t *p_fsm)
 {
-    fsm_fire(p_fsm);
+    fsm_fire(&p_fsm->f);
 }
 
 bool fsm_rgb_light_get_status (fsm_rgb_light_t *p_fsm)

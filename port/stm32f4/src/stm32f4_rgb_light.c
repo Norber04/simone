@@ -124,7 +124,6 @@ void 	port_rgb_light_set_rgb (uint8_t rgb_light_id, rgb_color_t color)
             }
             else
             {
-                /*TODO set the duty cycle, enable the channel*/
             uint32_t duty_r = (color.r * arr) / COLOR_RGB_MAX_VALUE; //scale o "normalization" to RGB_MAX_VALUE
             TIM4->CCR1 = duty_r;
             TIM4->CCER |= TIM_CCER_CC1E; //enable the chanel
@@ -136,7 +135,6 @@ void 	port_rgb_light_set_rgb (uint8_t rgb_light_id, rgb_color_t color)
             }
             else
             {
-                /*TODO set the duty cycle, enable the channel*/
             uint32_t duty_g = (color.g * arr) / COLOR_RGB_MAX_VALUE;
             TIM4->CCR2 = duty_g;
             TIM4->CCER |= TIM_CCER_CC2E;
@@ -148,7 +146,6 @@ void 	port_rgb_light_set_rgb (uint8_t rgb_light_id, rgb_color_t color)
             }
             else
             {
-                /*TODO set the duty cycle, enable the channel*/
             uint32_t duty_b = (color.b * arr) / COLOR_RGB_MAX_VALUE;
             TIM4->CCR3 = duty_b;
             TIM4->CCER |= TIM_CCER_CC3E;
@@ -164,5 +161,4 @@ void 	port_rgb_light_set_rgb (uint8_t rgb_light_id, rgb_color_t color)
             TIM4 -> CCER &= ~(TIM_CCER_CC1E | TIM_CCER_CC2E | TIM_CCER_CC3E);
         }
     }
-    return;
 }

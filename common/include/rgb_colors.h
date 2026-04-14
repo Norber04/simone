@@ -27,7 +27,7 @@ typedef struct
     uint8_t b; /*!< Blue color value */
 } rgb_color_t;
 
-// Colors must be defined in rgb_colors.c, and declared here as extern
+// Colors must be defined- in rgb_colors.c, and declared here as extern
 // Check other colors: https://www.downtownuplighting.com/rgb-color-chart
 extern const rgb_color_t color_red;
 extern const rgb_color_t color_green;
