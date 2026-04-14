@@ -8,6 +8,8 @@
 
 /* Standard C includes */
 #include <stdio.h>
+#include <math.h>
+
 /* HW dependent includes */
 #include "port_rgb_light.h"
 #include "port_system.h"
@@ -58,7 +60,7 @@ void 	_timer_pwm_config (uint8_t rgb_light_id)
     double SystemClock = (double)SystemCoreClock;
     double t_inter = (double)PORT_RGB_LIGHT_PWM_PERIOD_MS / 1000.0;
 
-    double psc = round((SystemClock*t_inter)/(65535.0+1.0)-1.0);
+    double psc = round((SystemClock*t_inter)/(65535.0+1.0)-1.0); // uint32_t psc = (uint32_t)(((SystemClock * t_inter) / 65536.0) - 1.0 + 0.5);
     double arr = round((SystemClock*t_inter)/(psc + 1.0)-1.0);
     if(arr > 65535.0){
         psc += 1.0;
@@ -105,26 +107,62 @@ void 	port_rgb_light_init (uint8_t rgb_light_id)
 }
 void 	port_rgb_light_set_rgb (uint8_t rgb_light_id, rgb_color_t color)
 {
-    if (rgb_light_id = PORT_RGB_LIGHT_ID)
+    if (rgb_light_id == PORT_RGB_LIGHT_ID)
     {
         /*disable the timer*/
         TIM4->CR1 &= ~TIM_CR1_CEN;
 
-        if (color.r != color.g && color.r != color.b && color.r != 0)
+        uint32_t arr = TIM4->ARR;
+
+        if (color.r != 0 && color.g != 0 && color.b != 0)
         {
+            // ================= RED =======================
             if (color.r == 0)
             {
+                //disable the chanel
                 TIM4 -> CCER &= ~(TIM_CCER_CC1E);
             }
             else
             {
                 /*TODO set the duty cycle, enable the channel*/
+            uint32_t duty_r = (color.r * arr) / COLOR_RGB_MAX_VALUE; //scale o "normalization" to RGB_MAX_VALUE
+            TIM4->CCR1 = duty_r;
+            TIM4->CCER |= TIM_CCER_CC1E; //enable the chanel
             }
+            // ================= GREEN =======================
+            if (color.g == 0)
+            {
+                TIM4 -> CCER &= ~(TIM_CCER_CC2E);
+            }
+            else
+            {
+                /*TODO set the duty cycle, enable the channel*/
+            uint32_t duty_g = (color.g * arr) / COLOR_RGB_MAX_VALUE;
+            TIM4->CCR2 = duty_g;
+            TIM4->CCER |= TIM_CCER_CC2E;
+            }
+            // ================= BLUE =======================
+            if (color.b == 0)
+            {
+                TIM4 -> CCER &= ~(TIM_CCER_CC3E);
+            }
+            else
+            {
+                /*TODO set the duty cycle, enable the channel*/
+            uint32_t duty_b = (color.b * arr) / COLOR_RGB_MAX_VALUE;
+            TIM4->CCR3 = duty_b;
+            TIM4->CCER |= TIM_CCER_CC3E;
+            }
+            /*force ARR to update*/
+            TIM4->EGR |= TIM_EGR_UG;
+
+            TIM4->CR1 |= TIM_CR1_CEN;
         }
         else 
         {
+            /*Disable the capture/compare register for all the chanells*/
             TIM4 -> CCER &= ~(TIM_CCER_CC1E | TIM_CCER_CC2E | TIM_CCER_CC3E);
         }
-
     }
+    return;
 }
