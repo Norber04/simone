@@ -58,6 +58,8 @@ void SysTick_Handler(void)
  */
 void EXTI15_10_IRQHandler(void)
 {
+    /*reactivated SysTcick*/
+    port_system_systick_resume();
     /*ISR user button*/
     if (EXTI->PR & BIT_POS_TO_MASK(buttons_arr[PORT_USER_BUTTON_ID].pin))
     {
@@ -83,6 +85,9 @@ void EXTI15_10_IRQHandler(void)
  * 
  */
 void EXTI9_5_IRQHandler(){
+    /*reactivated SysTcick*/
+    port_system_systick_resume();
+
     if(EXTI->PR & BIT_POS_TO_MASK(keyboards_arr[PORT_KEYBOARD_MAIN_ID].p_col_pins[PORT_KEYBOARD_COL_0]))
     {
         _check_column_interrupt(PORT_KEYBOARD_COL_0);
@@ -103,6 +108,9 @@ void EXTI9_5_IRQHandler(){
  */
 void EXTI4_IRQHandler()
 {
+    /*reactivated SysTcick*/
+    port_system_systick_resume();
+    
     if(EXTI->PR & BIT_POS_TO_MASK(keyboards_arr[PORT_KEYBOARD_MAIN_ID].p_col_pins[PORT_KEYBOARD_COL_2]))
     {
         _check_column_interrupt(PORT_KEYBOARD_COL_2);

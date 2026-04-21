@@ -84,7 +84,7 @@ void 	_timer_pwm_config (uint8_t rgb_light_id)
     
 
     /*trigger an update event to set the arr and psc values*/
-    TIM5 -> EGR = TIM_EGR_UG;
+    TIM4 -> EGR = TIM_EGR_UG;
 }
 
 /* Public functions -----------------------------------------------------------*/
@@ -114,7 +114,7 @@ void 	port_rgb_light_set_rgb (uint8_t rgb_light_id, rgb_color_t color)
 
         uint32_t arr = TIM4->ARR;
 
-        if (color.r != 0 && color.g != 0 && color.b != 0)
+        if (color.r != 0 || color.g != 0 || color.b != 0)
         {
             // ================= RED =======================
             if (color.r == 0)

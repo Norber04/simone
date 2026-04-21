@@ -10,6 +10,7 @@
 /* Standard C includes */
 #include <stdlib.h>
 #include <stdio.h>
+#include "math.h"
 /* HW dependent includes */
 #include "port_rgb_light.h"
 #include "port_system.h"
@@ -23,7 +24,8 @@
 
 void _correct_rgb_light_levels	(rgb_color_t * p_color, uint8_t intensity_perc )
 {
-    float correct_rgb = COLOR_RGB_MAX_VALUE * intensity_perc / MAX_LEVEL_INTENSITY + 0.5;
+    uint8_t max_intensity = MAX_LEVEL_INTENSITY;
+    float correct_rgb = (float)(COLOR_RGB_MAX_VALUE * intensity_perc / max_intensity ) + 0.5;
     p_color->r = (uint8_t)correct_rgb;
     p_color->g = (uint8_t)correct_rgb;
     p_color->b = (uint8_t)correct_rgb;
@@ -76,7 +78,7 @@ static void do_set_on(fsm_t * p_this)
 }
 
 
-fsm_rgb_light_t fsm_trans_rgb_light[] = {
+fsm_trans_t fsm_trans_rgb_light[] = {
     {IDLE_RGB,      check_active,           SET_COLOR,      do_set_on},
     {SET_COLOR,     check_set_new_color,    SET_COLOR,      do_set_color},
     {SET_COLOR,     check_off,              IDLE_RGB,       do_set_off},
@@ -85,7 +87,7 @@ fsm_rgb_light_t fsm_trans_rgb_light[] = {
 /* Other auxiliary functions */
 static void fsm_rgb_light_init(	fsm_rgb_light_t * p_fsm_rgb_light, uint8_t rgb_light_id)
 {
-    fsm_init(&p_fsm_rgb_light ,fsm_trans_rgb_light);
+    fsm_init(&p_fsm_rgb_light->f ,fsm_trans_rgb_light);
 
     p_fsm_rgb_light->rgb_light_id = rgb_light_id;
     p_fsm_rgb_light->intensity_perc = MAX_LEVEL_INTENSITY;
@@ -94,7 +96,7 @@ static void fsm_rgb_light_init(	fsm_rgb_light_t * p_fsm_rgb_light, uint8_t rgb_l
     p_fsm_rgb_light->idle = false;
     p_fsm_rgb_light->status = false;
 
-    port_rgb_light_init(&p_fsm_rgb_light->rgb_light_id);
+    port_rgb_light_init(p_fsm_rgb_light->rgb_light_id);
 }	
 
 /* Public functions -----------------------------------------------------------*/
@@ -135,8 +137,8 @@ void fsm_rgb_light_set_status (fsm_rgb_light_t *p_fsm, bool pause)
 {
     p_fsm->status = pause;
 }
- 
-bool fsm_rgb_light_check_activity (fsm_rgb_light_t *p_fsm)
+
+bool fsm_rgb_light_check_activity(fsm_rgb_light_t * p_fsm)
 {
-   return !p_fsm->idle && p_fsm->status;
+   return p_fsm->status && !(p_fsm->idle == IDLE_RGB);
 }

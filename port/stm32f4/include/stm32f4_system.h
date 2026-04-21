@@ -191,4 +191,11 @@ void stm32f4_system_gpio_write(GPIO_TypeDef *p_port,uint8_t pin , bool value);
  * @param pin in/line of the GPIO (index from 0 to 15)
  */
 void stm32f4_system_gpio_toggle(GPIO_TypeDef *p_port,uint8_t pin);
+
+void port_system_power_stop();
+void port_system_power_sleep();
+void port_system_systick_suspend();
+void port_system_systick_resume();
+void port_system_sleep();
+
 #endif /* STM32F4_SYSTEM_H_ */
