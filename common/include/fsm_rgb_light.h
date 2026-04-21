@@ -22,7 +22,7 @@ enum  	FSM_RGB_LIGHT_SYSTEM {
     SET_COLOR
 };
 /* Defines and enums ----------------------------------------------------------*/
-#define MAX_LEVEL_INTENSITY 100;
+#define MAX_LEVEL_INTENSITY 100
 /* Typedefs --------------------------------------------------------------------*/
 typedef struct 
 {

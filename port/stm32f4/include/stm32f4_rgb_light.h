@@ -33,5 +33,5 @@ typedef struct{
 #define 	STM32F4_RGB_LIGHT_B_GPIO    GPIOB
 #define 	STM32F4_RGB_LIGHT_B_PIN     9
 
-stm32f4_rgb_light_hw_t 	rgb_lights_arr [];
+extern stm32f4_rgb_light_hw_t 	rgb_lights_arr [];
 #endif /* STM32F4_RGB_LIGHT_SYSTEM_H_ */

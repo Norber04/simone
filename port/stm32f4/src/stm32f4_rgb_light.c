@@ -46,7 +46,7 @@ stm32f4_rgb_light_hw_t *_stm32f4_rgb_light_get(uint8_t rgb_light_id)
     }
 }
 
-void 	_timer_pwm_config (uint8_t rgb_light_id)
+void _timer_pwm_config (uint8_t rgb_light_id)
 {
     /*Enable the clock of the timer that controls the column scanning.*/
     RCC -> APB1ENR|=RCC_APB1ENR_TIM4EN;
@@ -60,15 +60,15 @@ void 	_timer_pwm_config (uint8_t rgb_light_id)
     double SystemClock = (double)SystemCoreClock;
     double t_inter = (double)PORT_RGB_LIGHT_PWM_PERIOD_MS / 1000.0;
 
-    double psc = round((SystemClock*t_inter)/(65535.0+1.0)-1.0); // uint32_t psc = (uint32_t)(((SystemClock * t_inter) / 65536.0) - 1.0 + 0.5);
+    double psc = round((SystemClock*t_inter)/(65535.0+1.0)-1.0); 
     double arr = round((SystemClock*t_inter)/(psc + 1.0)-1.0);
     if(arr > 65535.0){
         psc += 1.0;
         arr = round((SystemClock*t_inter)/(psc + 1.0)-1.0);
     }
-    TIM4 -> ARR = arr;
-    TIM4 -> PSC = psc;
-
+    TIM4 -> ARR = (uint32_t)arr;
+    TIM4 -> PSC = (uint32_t)psc;
+    TIM4 -> EGR = TIM_EGR_UG;
     /*Disable the output of the corresponding channels*/
     TIM4 -> CCER &= ~(TIM_CCER_CC1E | TIM_CCER_CC2E | TIM_CCER_CC3E | TIM_CCER_CC4E);
 
@@ -77,14 +77,15 @@ void 	_timer_pwm_config (uint8_t rgb_light_id)
     TIM4 -> CCER &= ~(TIM_CCER_CC1NP | TIM_CCER_CC2NP | TIM_CCER_CC3NP | TIM_CCER_CC4NP);
 
     /*Set PWM mode*/
-    TIM4 -> CCMR1 &= ~(TIM_CCMR1_OC1M | TIM_CCMR1_OC2M);
-    TIM4 -> CCMR1 &= ~(TIM_CCMR1_OC1PE | TIM_CCMR1_OC2PE);
-    TIM4 -> CCMR2 &= ~(TIM_CCMR2_OC3M | TIM_CCMR2_OC4M);
-    TIM4 -> CCMR2 &= ~(TIM_CCMR2_OC3PE | TIM_CCMR2_OC4PE);
+    TIM4 -> CCMR1 &= ~(TIM_CCMR1_OC1M | TIM_CCMR1_OC1PE);
+    TIM4 -> CCMR1 |= (TIM_CCMR1_OC1M_2 | TIM_CCMR1_OC1M_1 | TIM_CCMR1_OC1PE);
+    TIM4 -> CCMR2 &= ~(TIM_CCMR2_OC3M | TIM_CCMR2_OC3PE | TIM_CCMR2_OC4M | TIM_CCMR2_OC4PE);
+    TIM4 -> CCMR2 |= (TIM_CCMR2_OC3M_2 | TIM_CCMR2_OC3M_1 | TIM_CCMR2_OC3PE | TIM_CCMR2_OC4M_2 | TIM_CCMR2_OC4M_1 | TIM_CCMR2_OC4PE);
     
 
     /*trigger an update event to set the arr and psc values*/
-    TIM5 -> EGR = TIM_EGR_UG;
+    TIM4 -> EGR |= TIM_EGR_UG; /* Generate an update event to load the new configuration*/
+    TIM4->CR1 &= ~TIM_CR1_CEN;/*keep the timer disabled after the configuration*/
 }
 
 /* Public functions -----------------------------------------------------------*/
@@ -105,6 +106,7 @@ void 	port_rgb_light_init (uint8_t rgb_light_id)
     _timer_pwm_config(rgb_light_id);
     port_rgb_light_set_rgb(rgb_light_id,color_off);
 }
+
 void 	port_rgb_light_set_rgb (uint8_t rgb_light_id, rgb_color_t color)
 {
     if (rgb_light_id == PORT_RGB_LIGHT_ID)
@@ -114,7 +116,12 @@ void 	port_rgb_light_set_rgb (uint8_t rgb_light_id, rgb_color_t color)
 
         uint32_t arr = TIM4->ARR;
 
-        if (color.r != 0 && color.g != 0 && color.b != 0)
+        if (color.r == 0 && color.g == 0 && color.b == 0)
+        {
+            /*Disable the capture/compare register for all the chanells*/
+            TIM4 -> CCER &= ~(TIM_CCER_CC1E | TIM_CCER_CC3E | TIM_CCER_CC4E);
+        }
+        else
         {
             // ================= RED =======================
             if (color.r == 0)
@@ -124,9 +131,9 @@ void 	port_rgb_light_set_rgb (uint8_t rgb_light_id, rgb_color_t color)
             }
             else
             {
-            uint32_t duty_r = (color.r * arr) / COLOR_RGB_MAX_VALUE; //scale o "normalization" to RGB_MAX_VALUE
-            TIM4->CCR1 = duty_r;
-            TIM4->CCER |= TIM_CCER_CC1E; //enable the chanel
+                uint32_t duty_r = (color.r * arr) / COLOR_RGB_MAX_VALUE; //scale o "normalization" to RGB_MAX_VALUE
+                TIM4->CCR1 = duty_r;
+                TIM4->CCER |= TIM_CCER_CC1E; //enable the chanel
             }
             // ================= GREEN =======================
             if (color.g == 0)
@@ -135,30 +142,25 @@ void 	port_rgb_light_set_rgb (uint8_t rgb_light_id, rgb_color_t color)
             }
             else
             {
-            uint32_t duty_g = (color.g * arr) / COLOR_RGB_MAX_VALUE;
-            TIM4->CCR2 = duty_g;
-            TIM4->CCER |= TIM_CCER_CC2E;
+                uint32_t duty_g = (color.g * arr) / COLOR_RGB_MAX_VALUE;
+                TIM4->CCR3 = duty_g;
+                TIM4->CCER |= TIM_CCER_CC3E;
             }
             // ================= BLUE =======================
             if (color.b == 0)
             {
-                TIM4 -> CCER &= ~(TIM_CCER_CC3E);
+                TIM4 -> CCER &= ~(TIM_CCER_CC4E);
             }
             else
             {
-            uint32_t duty_b = (color.b * arr) / COLOR_RGB_MAX_VALUE;
-            TIM4->CCR3 = duty_b;
-            TIM4->CCER |= TIM_CCER_CC3E;
+                uint32_t duty_b = (color.b * arr) / COLOR_RGB_MAX_VALUE;
+                TIM4->CCR4 = duty_b;
+                TIM4->CCER |= TIM_CCER_CC4E;
             }
             /*force ARR to update*/
             TIM4->EGR |= TIM_EGR_UG;
 
             TIM4->CR1 |= TIM_CR1_CEN;
-        }
-        else 
-        {
-            /*Disable the capture/compare register for all the chanells*/
-            TIM4 -> CCER &= ~(TIM_CCER_CC1E | TIM_CCER_CC2E | TIM_CCER_CC3E);
         }
     }
 }

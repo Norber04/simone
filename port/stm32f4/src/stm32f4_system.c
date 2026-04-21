@@ -136,7 +136,7 @@ uint32_t port_system_init()
   FLASH->ACR |= FLASH_ACR_PRFTEN;
 
   /* Set Interrupt Group Priority */
-  NVIC_SetPriorityGrouping(NVIC_PRIORITY_GROUP_4);
+  NVIC_SetPriorityGrouping(NVIC_PRIORITY_GROUP_5);
 
   /* Use systick as time base source and configure 1ms tick (default clock after Reset is HSI) */
   /* Configure the SysTick IRQ priority. It must be the highest (lower number: 0)*/
@@ -295,7 +295,6 @@ void stm32f4_system_gpio_config_alternate(GPIO_TypeDef *p_port, uint8_t pin, uin
   p_port->AFR[(uint8_t)(pin / 8)] &= ~(base_mask << displacement);
   p_port->AFR[(uint8_t)(pin / 8)] |= (alternate << displacement);
 }
-
 bool stm32f4_system_gpio_read(GPIO_TypeDef *p_port, uint8_t pin)
 {
   uint8_t mask_pin = BIT_POS_TO_MASK(pin);

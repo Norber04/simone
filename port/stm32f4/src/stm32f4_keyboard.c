@@ -179,7 +179,7 @@ void port_keyboard_excite_row (uint8_t keyboard_id, uint8_t row_idx)
     stm32f4_keyboard_hw_t *p_keyboard = _stm32f4_keyboard_get(keyboard_id);
     for(uint8_t i = 0; i<p_keyboard->p_keyboard->num_rows; i++)
     {
-        if(p_keyboard->p_row_pins[i] == row_idx)
+        if(i == row_idx)
         {
             stm32f4_system_gpio_write(p_keyboard->p_row_ports[i],p_keyboard->p_row_pins[i],true);
         }
