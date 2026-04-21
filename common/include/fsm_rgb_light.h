@@ -50,5 +50,7 @@ void fsm_rgb_light_set_status (fsm_rgb_light_t *p_fsm, bool pause);
  
 bool fsm_rgb_light_check_activity (fsm_rgb_light_t *p_fsm);
  
+bool fsm_rgb_light_check_activity(fsm_rgb_light_t * p_fsm);
+
  
 #endif /* FSM_RGB_LIGHT_SYSTEM_H_ */

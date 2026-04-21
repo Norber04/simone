@@ -18,7 +18,7 @@
 /* Defines */
 // Define here all the button identifiers that are used in the system
 #define PORT_USER_BUTTON_ID 0
-#define PORT_USER_BUTTON_DEBOUNCE_TIME_MS
+#define PORT_USER_BUTTON_DEBOUNCE_TIME_MS 150
 
 /* Function prototypes and explanation -------------------------------------------------*/
 

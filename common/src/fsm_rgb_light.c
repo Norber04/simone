@@ -10,6 +10,7 @@
 /* Standard C includes */
 #include <stdlib.h>
 #include <stdio.h>
+#include "math.h"
 /* HW dependent includes */
 #include "port_rgb_light.h"
 #include "port_system.h"
@@ -134,8 +135,8 @@ void fsm_rgb_light_set_status (fsm_rgb_light_t *p_fsm, bool pause)
 {
     p_fsm->status = pause;
 }
- 
-bool fsm_rgb_light_check_activity (fsm_rgb_light_t *p_fsm)
+
+bool fsm_rgb_light_check_activity(fsm_rgb_light_t * p_fsm)
 {
-   return !p_fsm->idle && p_fsm->status;
+   return p_fsm->status && !(p_fsm->idle == IDLE_RGB);
 }

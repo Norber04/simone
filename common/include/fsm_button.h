@@ -68,4 +68,6 @@ uint32_t 	fsm_button_get_debounce_time_ms (fsm_button_t *p_fsm);
 
 bool 	fsm_button_check_activity (fsm_button_t *p_fsm);
 
+bool fsm_button_check_activity(fsm_button_t * p_fsm);
+
 #endif

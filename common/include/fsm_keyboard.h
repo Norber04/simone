@@ -101,4 +101,6 @@ void 	fsm_keyboard_reset_key_value (fsm_keyboard_t *p_fsm);
  */
 bool 	fsm_keyboard_check_activity (fsm_keyboard_t *p_fsm);
 
+bool fsm_keyboard_check_activity(fsm_keyboard_t * p_fsm);
+
 #endif /* FSM_KEYBOARD_H_ */
