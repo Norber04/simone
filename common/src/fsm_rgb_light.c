@@ -138,5 +138,5 @@ void fsm_rgb_light_set_status (fsm_rgb_light_t *p_fsm, bool pause)
 
 bool fsm_rgb_light_check_activity(fsm_rgb_light_t * p_fsm)
 {
-   return p_fsm->status && !(p_fsm->idle == IDLE_RGB);
+   return p_fsm->status && !(p_fsm->idle);
 }

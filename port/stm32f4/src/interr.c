@@ -13,7 +13,7 @@
 #include "stm32f4_button.h"
 #include "port_keyboard.h"
 #include "stm32f4_keyboard.h"
-//#include "port_simone.h"
+#include "port_simone.h"
 
 
 void _check_column_interrupt(uint8_t column_index)
@@ -68,7 +68,7 @@ void EXTI15_10_IRQHandler(void)
         bool condition = stm32f4_system_gpio_read(p_port,pin);
 
         //if the is released changes the flag
-        buttons_arr[PORT_USER_BUTTON_ID].flag_pressed = !condition;
+        buttons_arr[PORT_USER_BUTTON_ID].flag_pressed = ~condition;
 
         // cleans the pendig register
         EXTI->PR = BIT_POS_TO_MASK(pin);
@@ -125,4 +125,14 @@ void TIM5_IRQHandler (void)	{
     TIM5->SR &= ~TIM_SR_UIF;
     stm32f4_keyboard_hw_t *p_hw = &keyboards_arr[PORT_KEYBOARD_MAIN_ID];
     p_hw->flag_row_timeout = true;
+}
+
+/**
+ * @brief This function handles the interruption from Timer 3
+ * 
+ */
+void TIM3_IRQHandler (void)	{
+    TIM3->SR &= ~TIM_SR_UIF;
+    //set the flag that the time has expired
+    port_simone_set_timeout_status(true);
 }

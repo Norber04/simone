@@ -123,7 +123,7 @@ void fsm_button_fire(fsm_button_t *p_fsm)
 
 void fsm_button_destroy(fsm_button_t *p_fsm)
 {
-    free(&p_fsm->f);
+    free(p_fsm);
 }
 
 uint32_t fsm_button_get_duration (fsm_button_t *p_fsm)

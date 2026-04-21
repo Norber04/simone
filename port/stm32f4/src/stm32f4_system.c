@@ -297,7 +297,7 @@ void stm32f4_system_gpio_config_alternate(GPIO_TypeDef *p_port, uint8_t pin, uin
 }
 bool stm32f4_system_gpio_read(GPIO_TypeDef *p_port, uint8_t pin)
 {
-  uint8_t mask_pin = BIT_POS_TO_MASK(pin);
+  uint32_t mask_pin = BIT_POS_TO_MASK(pin);
 
   bool value = (bool)(p_port->IDR & mask_pin);
 

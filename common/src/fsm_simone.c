@@ -13,10 +13,12 @@
 #include <time.h>
 
 /* HW dependent includes */
-
+#include "port_system.h"
+#include "port_simone.h"
 /* Project includes */
-
-/*
+#include "fsm.h"
+#include "fsm_simone.h"
+#include "rgb_colors.h"
 
 const rgb_color_t *p_colors_library[] = {&color_red, &color_green, &color_blue, &color_yellow, &color_turquoise, &color_white};
 
@@ -54,22 +56,20 @@ static rgb_color_t _get_color_from_key(char key)
 
 static void _add_color(fsm_simone_t *p_fsm_simone)
 {
-     TODO students
+    /* TODO students */
 }
 
- State machine input or transition functions 
+/* State machine input or transition functions */
 
 
- State machine output or action functions
+/* State machine output or action functions */
 
 static void fsm_simone_init(fsm_simone_t *p_fsm_simone, fsm_button_t *p_fsm_button, uint32_t on_off_press_time_ms, fsm_keyboard_t *p_fsm_keyboard, fsm_rgb_light_t *p_fsm_rgb_light, uint8_t level)
 {
-     TODO students 
+    /* TODO students */
 }
 
 fsm_simone_t *fsm_simone_new(fsm_button_t *p_fsm_button, uint32_t on_off_press_time_ms, fsm_keyboard_t *p_fsm_keyboard, fsm_rgb_light_t *p_fsm_rgb_light, uint8_t level)
 {
-    TODO students 
+    /* TODO students */
 }
-*/
-
